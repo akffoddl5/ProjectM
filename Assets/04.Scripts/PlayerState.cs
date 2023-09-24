@@ -17,8 +17,12 @@ public class PlayerState
 	public bool canAnim = false;
 
 	//타이머
+	public float timer1;
 	public float dash_init_cool_timer;
-	public float dash_init_cool = 5f * Time.deltaTime;
+	public float dash_init_cool = 3f * Time.deltaTime;
+	public float dash_cool = 0;
+	public float dash_cool_max = 13f * Time.deltaTime;
+
 
 	//인풋
 	public float get_X;
@@ -56,42 +60,9 @@ public class PlayerState
 		get_Y = Input.GetAxisRaw("Vertical");
 		get_Space = Input.GetKeyDown(KeyCode.Space);
 
-		if (dash_init_cool_timer < 0)
-		{
-			last_keycode = 0;
-			last_XY = 'O';
-		}
+		timer1 -= Time.deltaTime;
+		dash_cool -= Time.deltaTime;
 
-
-		if (get_Y != 0)
-		{
-			Debug.Log("flag1" + last_keycode + last_XY);
-			if (last_keycode == get_Y && last_XY == 'Y')
-			{
-				//대쉬
-				stateMachine.ChangeState(player.dashState);
-			}
-			last_XY = 'Y';
-			last_keycode = get_Y;
-		}
-
-		if (get_X != 0)
-		{
-			if (last_keycode == get_X && last_XY == 'X')
-			{
-				//대쉬
-				stateMachine.ChangeState(player.dashState);
-			}
-			last_XY = 'X';
-			last_keycode = get_X;
-		}
-		
-
-
-
-
-		dash_init_cool_timer -= Time.deltaTime;
-		
 	}
 
 	public virtual void Exit()
