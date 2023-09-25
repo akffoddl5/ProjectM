@@ -15,6 +15,7 @@ public class StateMachine
 	public void ChangeState(PlayerState state)
 	{
 		cur_state.Exit();
+		
 		cur_state = state;
 		cur_state.Enter();
 	}
