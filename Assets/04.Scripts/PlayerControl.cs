@@ -17,12 +17,13 @@ public class PlayerControl : MonoBehaviour
 
 	//Ã¼Å©
 	public Transform groundCheck1;
-	public Transform groundCheck2;
-	public Transform groundCheck3;
-	public Transform groundCheck4;
+	//public Transform groundCheck2;
+	//public Transform groundCheck3;
+	//public Transform groundCheck4;
 
-    //ÄÄÆ÷³ÍÆ®
-    public Rigidbody rb;
+	//ÄÄÆ÷³ÍÆ®
+	public CharacterController CC;
+    //public Rigidbody rb;
 	public Animator anim;
 	public CinemachineVirtualCamera vcam;
 	public float rotationY;
@@ -37,7 +38,8 @@ public class PlayerControl : MonoBehaviour
 
 	private void Awake()
 	{
-		rb = GetComponent<Rigidbody>();
+		CC = GetComponent<CharacterController>();
+		//rb = GetComponent<Rigidbody>();
 		anim = GetComponent<Animator>();
 
 		stateMachine = new StateMachine();
@@ -91,17 +93,22 @@ public class PlayerControl : MonoBehaviour
 
 	public bool GroundDetected()
 	{
-		return Physics.Raycast(groundCheck1.position, Vector3.down, 0.1f, LayerMask.GetMask("Ground")) ||
-			Physics.Raycast(groundCheck2.position, Vector3.down, 0.1f, LayerMask.GetMask("Ground")) ||
-			Physics.Raycast(groundCheck3.position, Vector3.down, 0.1f, LayerMask.GetMask("Ground")) ||
-			Physics.Raycast(groundCheck4.position, Vector3.down, 0.1f, LayerMask.GetMask("Ground"));
+		if (Physics.OverlapSphere(groundCheck1.position, 0.5f, LayerMask.GetMask("Ground")) != null &&
+			Physics.OverlapSphere(groundCheck1.position, 0.5f, LayerMask.GetMask("Ground")).Length != 0) return true;
+		return false;
+		
+		//return Physics.Raycast(groundCheck1.position, Vector3.down, 0.1f, LayerMask.GetMask("Ground")) ||
+		//	Physics.Raycast(groundCheck2.position, Vector3.down, 0.1f, LayerMask.GetMask("Ground")) ||
+		//	Physics.Raycast(groundCheck3.position, Vector3.down, 0.1f, LayerMask.GetMask("Ground")) ||
+		//	Physics.Raycast(groundCheck4.position, Vector3.down, 0.1f, LayerMask.GetMask("Ground"));
 	}
 
 	private void OnDrawGizmos()
 	{
-		Gizmos.DrawLine(groundCheck1.position, groundCheck1.position + new Vector3(0, -0.1f, 0));
-		Gizmos.DrawLine(groundCheck2.position, groundCheck2.position + new Vector3(0, -0.1f, 0));
-		Gizmos.DrawLine(groundCheck3.position, groundCheck3.position + new Vector3(0, -0.1f, 0));
-		Gizmos.DrawLine(groundCheck4.position, groundCheck4.position + new Vector3(0, -0.1f, 0));
+		Gizmos.DrawSphere(groundCheck1.position, 0.5f);
+		//Gizmos.DrawLine(groundCheck1.position, groundCheck1.position + new Vector3(0, -0.1f, 0));
+		//Gizmos.DrawLine(groundCheck2.position, groundCheck2.position + new Vector3(0, -0.1f, 0));
+		//Gizmos.DrawLine(groundCheck3.position, groundCheck3.position + new Vector3(0, -0.1f, 0));
+		//Gizmos.DrawLine(groundCheck4.position, groundCheck4.position + new Vector3(0, -0.1f, 0));
 	}
 }

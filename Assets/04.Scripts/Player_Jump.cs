@@ -11,7 +11,9 @@ public class Player_Jump : PlayerState
 	public override void Enter()
 	{
 		base.Enter();
-		rb.AddForce(new Vector3(0, jump_power, 0));
+		get_Jump = jump_power;
+		
+		//rb.AddForce(new Vector3(0, jump_power, 0));
 	}
 
 	public override void Exit()
@@ -22,17 +24,35 @@ public class Player_Jump : PlayerState
 	public override void Update()
 	{
 		base.Update();
-		Debug.Log("jump");
-		if (rb.velocity.y <= 0)
-		{
-			stateMachine.ChangeState(player.airState);
-		}
+
 		
+
+		
+
 
 	}
 
 	public override void FixedUpdate()
 	{
 		base.FixedUpdate();
+
+		
+
+		if (get_X != 0 || get_Y != 0)
+		{
+			Quaternion requireRotation = Quaternion.LookRotation(dir);
+			player.transform.rotation = requireRotation;
+		}
+
+		CC.Move((dir * speed + new Vector3(0, get_Jump, 0)) * Time.deltaTime);
+		//get_Jump += Physics.gravity.y * Time.deltaTime;
+		if (!player.GroundDetected())
+			get_Jump += Physics.gravity.y * Time.deltaTime;
+
+		if (CC.velocity.y <= 0)
+		{
+			Debug.Log("flag1  " + CC.velocity.y + " " + get_Jump);
+			stateMachine.ChangeState(player.airState);
+		}
 	}
 }

@@ -29,14 +29,14 @@ public class Player_Run : PlayerState
 		base.FixedUpdate();
 		if (get_X != 0 || get_Y != 0)
 		{
-			Vector3 dir = player.FlatRotation * new Vector3(get_X, 0, get_Y).normalized;
 			Quaternion requireRotation = Quaternion.LookRotation(dir);
-			player.transform.rotation = Quaternion.RotateTowards(player.transform.rotation, requireRotation, 600 * Time.deltaTime);
-			rb.velocity = dir * speed + new Vector3(0, rb.velocity.y, 0);
+			player.transform.rotation = requireRotation;
+
+			CC.Move((dir * speed + new Vector3(0, CC.velocity.y, 0)) * Time.deltaTime);
 		}
 		else
 		{
-			rb.velocity = Vector3.zero;
+			//rb.velocity = Vector3.zero;
 			stateMachine.ChangeState(player.idleState);
 		}
 	}
