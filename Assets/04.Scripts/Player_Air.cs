@@ -10,7 +10,6 @@ public class Player_Air : PlayerState
 
 	public override void Enter()
 	{
-		Debug.Log(get_Jump + " in air" + get_Jump);
 		base.Enter();
 	}
 
@@ -21,7 +20,7 @@ public class Player_Air : PlayerState
 
 	public override void FixedUpdate()
 	{
-		Debug.Log(get_Jump + " in air" + get_Jump);
+		//Debug.Log(get_Jump + " in air" + get_Jump);
 		base.FixedUpdate();
 
 		if (get_X != 0 || get_Y != 0)
@@ -32,14 +31,12 @@ public class Player_Air : PlayerState
 		}
 
 		CC.Move((dir * speed + new Vector3(0, get_Jump, 0)) * Time.deltaTime);
-		//get_Jump += Physics.gravity.y * Time.deltaTime;
-		if (!player.GroundDetected())
-			get_Jump += Physics.gravity.y * Time.deltaTime;
 
-		Debug.Log(get_Jump + " in air" + get_Jump);
+		if (!player.GroundDetected())
+			get_Jump += Physics.gravity.y * 3 * Time.deltaTime;
+
 		if (player.GroundDetected())
 		{
-			Debug.Log("detected air..");
 			stateMachine.ChangeState(player.idleState);
 		}
 	}

@@ -50,7 +50,7 @@ public class PlayerState
 
 	public virtual void FixedUpdate()
 	{
-		Debug.Log("flag3  " + CC.velocity.y + " " + get_Jump);
+		//Debug.Log("flag3  " + CC.velocity.y + " " + get_Jump);
 		
 	}
 

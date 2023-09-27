@@ -826,13 +826,13 @@ PlayerSettings:
   useDeterministicCompilation: 1
   additionalIl2CppArgs: 
   scriptingRuntimeVersion: 1
-  gcIncremental: 0
+  gcIncremental: 1
   gcWBarrierValidation: 0
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Proect_M
-  metroPackageVersion: 
+  metroPackageName: ProectM
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -840,7 +840,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: Proect_M
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: Proect_M
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0

@@ -22,7 +22,13 @@ public class Player_Idle : PlayerState
 	{
 		base.Update();
 
-		if (get_Space)
+		
+
+		if (!player.GroundDetected())
+		{
+			stateMachine.ChangeState(player.airState);
+		}
+		else if (get_Space)
 		{
 			stateMachine.ChangeState(player.jumpState);
 		}

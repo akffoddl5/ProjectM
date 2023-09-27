@@ -22,11 +22,18 @@ public class Player_Run : PlayerState
 	public override void Update()
 	{
 		base.Update();
+		if (get_Space)
+		{
+			Debug.Log("jump ");
+			stateMachine.ChangeState(player.jumpState);
+		}
 	}
 
 	public override void FixedUpdate()
 	{
 		base.FixedUpdate();
+		
+
 		if (get_X != 0 || get_Y != 0)
 		{
 			Quaternion requireRotation = Quaternion.LookRotation(dir);

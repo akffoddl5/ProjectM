@@ -47,11 +47,10 @@ public class Player_Jump : PlayerState
 		CC.Move((dir * speed + new Vector3(0, get_Jump, 0)) * Time.deltaTime);
 		//get_Jump += Physics.gravity.y * Time.deltaTime;
 		if (!player.GroundDetected())
-			get_Jump += Physics.gravity.y * Time.deltaTime;
+			get_Jump += Physics.gravity.y * 3 * Time.deltaTime;
 
 		if (CC.velocity.y <= 0)
 		{
-			Debug.Log("flag1  " + CC.velocity.y + " " + get_Jump);
 			stateMachine.ChangeState(player.airState);
 		}
 	}
