@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player_Dash : PlayerState
 {
+	Vector3 dash_dir;
 	public Player_Dash(string animBoolName, StateMachine stateMachine, PlayerControl player) : base(animBoolName, stateMachine, player)
 	{
 	}
@@ -11,6 +12,8 @@ public class Player_Dash : PlayerState
 	public override void Enter()
 	{
 		base.Enter();
+		timer1 = 15 * Time.deltaTime;
+		dash_dir = player.transform.forward;
 		Debug.Log("dash!!!");
 	}
 
@@ -27,5 +30,15 @@ public class Player_Dash : PlayerState
 	public override void FixedUpdate()
 	{
 		base.FixedUpdate();
+		if (timer1 < 0)
+		{
+			stateMachine.ChangeState(player.idleState);
+		}
+		else
+		{
+			//rb.velocity = dash_dir.normalized * 60f;
+			CC.Move(dash_dir.normalized * 30 * Time.deltaTime);
+
+		}
 	}
 }

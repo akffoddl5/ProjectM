@@ -22,11 +22,16 @@ public class Player_Idle : PlayerState
 	{
 		base.Update();
 
-		
+
 
 		if (!player.GroundDetected())
 		{
 			stateMachine.ChangeState(player.airState);
+		}
+		else if (aiming)
+		{
+			//Debug.Log("aim");
+			stateMachine.ChangeState(player.aimState);
 		}
 		else if (get_Space)
 		{
@@ -35,6 +40,15 @@ public class Player_Idle : PlayerState
 		else if (get_X != 0 || get_Y != 0)
 		{
 			stateMachine.ChangeState(player.runState);
+		}
+		else if (Input.GetKeyDown(KeyCode.LeftShift))
+		{
+			if (dash_cool < 0)
+			{
+				dash_cool = dash_cool_max;
+				stateMachine.ChangeState(player.dashState);
+
+			}
 		}
 	}
 

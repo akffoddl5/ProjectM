@@ -14,9 +14,11 @@ public class PlayerControl : MonoBehaviour
     public PlayerState landState;
     public PlayerState dashState;
     public PlayerState runState;
+	public PlayerState aimState;
 
 	//체크
 	public Transform groundCheck1;
+	public GameObject image_Aim;
 	//public Transform groundCheck2;
 	//public Transform groundCheck3;
 	//public Transform groundCheck4;
@@ -26,22 +28,38 @@ public class PlayerControl : MonoBehaviour
     //public Rigidbody rb;
 	public Animator anim;
 	public CinemachineVirtualCamera vcam;
+	public CinemachineVirtualCamera aimCam;
+	public CinemachineTransposer vcam_trans;
+	public CinemachineTransposer aimcam_trans;
+	public CinemachinePOV vcam_POV;
+	public CinemachinePOV aimCam_POV;
+
 	public float rotationY;
 
 
 	//움직임
 	public float speed = 5f;
     public float jump_power = 500f;
+	public float dash_power = 60f;
 
-	
+
 
 
 	private void Awake()
 	{
+		
 		CC = GetComponent<CharacterController>();
+		//vcam_trans = vcam.AddCinemachineComponent<CinemachineTransposer>();
+		//aimcam_trans = aimCam.AddCinemachineComponent<CinemachineTransposer>();
+		
+		vcam_POV = vcam.GetCinemachineComponent<CinemachinePOV>();
+		aimCam_POV = aimCam.GetCinemachineComponent<CinemachinePOV>();
+
+
 		//rb = GetComponent<Rigidbody>();
 		anim = GetComponent<Animator>();
-
+		image_Aim = GameObject.Find("Image_Aim");
+		image_Aim.SetActive(false);
 		stateMachine = new StateMachine();
 		
         idleState = new Player_Idle("IDLE",stateMachine, this);
@@ -50,6 +68,7 @@ public class PlayerControl : MonoBehaviour
 		landState = new Player_Land("LAND", stateMachine, this);
 		dashState = new Player_Dash("DASH", stateMachine, this);
 		runState = new Player_Run("RUN", stateMachine, this);
+		aimState = new Player_Aim("Aiming", stateMachine, this);
 
 		stateMachine.Initialize(idleState);
 	}
@@ -97,18 +116,10 @@ public class PlayerControl : MonoBehaviour
 			Physics.OverlapSphere(groundCheck1.position, 0.5f, LayerMask.GetMask("Ground")).Length != 0) return true;
 		return false;
 		
-		//return Physics.Raycast(groundCheck1.position, Vector3.down, 0.1f, LayerMask.GetMask("Ground")) ||
-		//	Physics.Raycast(groundCheck2.position, Vector3.down, 0.1f, LayerMask.GetMask("Ground")) ||
-		//	Physics.Raycast(groundCheck3.position, Vector3.down, 0.1f, LayerMask.GetMask("Ground")) ||
-		//	Physics.Raycast(groundCheck4.position, Vector3.down, 0.1f, LayerMask.GetMask("Ground"));
 	}
 
 	private void OnDrawGizmos()
 	{
 		Gizmos.DrawSphere(groundCheck1.position, 0.5f);
-		//Gizmos.DrawLine(groundCheck1.position, groundCheck1.position + new Vector3(0, -0.1f, 0));
-		//Gizmos.DrawLine(groundCheck2.position, groundCheck2.position + new Vector3(0, -0.1f, 0));
-		//Gizmos.DrawLine(groundCheck3.position, groundCheck3.position + new Vector3(0, -0.1f, 0));
-		//Gizmos.DrawLine(groundCheck4.position, groundCheck4.position + new Vector3(0, -0.1f, 0));
 	}
 }

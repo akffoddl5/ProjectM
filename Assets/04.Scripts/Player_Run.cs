@@ -22,7 +22,15 @@ public class Player_Run : PlayerState
 	public override void Update()
 	{
 		base.Update();
-		if (get_Space)
+		if (Input.GetKeyDown(KeyCode.LeftShift))
+		{
+			if (dash_cool < 0)
+			{
+				dash_cool = dash_cool_max;
+				stateMachine.ChangeState(player.dashState);
+
+			}
+		}else if (get_Space)
 		{
 			Debug.Log("jump ");
 			stateMachine.ChangeState(player.jumpState);
@@ -32,8 +40,9 @@ public class Player_Run : PlayerState
 	public override void FixedUpdate()
 	{
 		base.FixedUpdate();
-		
 
+
+		
 		if (get_X != 0 || get_Y != 0)
 		{
 			Quaternion requireRotation = Quaternion.LookRotation(dir);
