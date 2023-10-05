@@ -35,6 +35,7 @@ public class PlayerState
 	public char last_XY;
 	public static bool aiming;
 	public static bool aiming_out;
+	public static bool shooting;
 
 	public PlayerState(string animBoolName, StateMachine stateMachine, PlayerControl player)
 	{
@@ -67,6 +68,7 @@ public class PlayerState
 		get_Y = Input.GetAxisRaw("Vertical");
 		get_Space = Input.GetKeyDown(KeyCode.Space);
 		aiming = Input.GetMouseButtonDown(1);
+		shooting = Input.GetMouseButtonDown(0);
 		if (!aiming)
 			aiming_out = Input.GetMouseButtonUp(1);
 		else

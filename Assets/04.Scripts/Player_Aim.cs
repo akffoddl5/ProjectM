@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player_Aim : PlayerState
 {
+
+
 	
 	public Player_Aim(string animBoolName, StateMachine stateMachine, PlayerControl player) : base(animBoolName, stateMachine, player)
 	{
@@ -12,6 +14,8 @@ public class Player_Aim : PlayerState
 	public override void Enter()
 	{
 		base.Enter();
+
+		
 		
 		player.vcam.gameObject.SetActive(false);
 		player.aimCam.gameObject.SetActive(true);
@@ -19,17 +23,14 @@ public class Player_Aim : PlayerState
 
 		player.aimCam_POV.m_HorizontalAxis.Value = player.vcam_POV.m_HorizontalAxis.Value;
 		player.aimCam_POV.m_VerticalAxis.Value = player.vcam_POV.m_VerticalAxis.Value;
-		//Debug.Log(player.aimcam_trans);
-		//Debug.Log(player.vcam_trans.m_FollowOffset);
-		//player.aimcam_trans.m_FollowOffset = player.vcam_trans.m_FollowOffset;
-		//player.aimcam_trans.m_XDamping = player.vcam_trans.m_XDamping;
-		//player.aimcam_trans.m_YDamping = player.vcam_trans.m_YDamping;
 
 	}
 
 	public override void Exit()
 	{
 		base.Exit();
+		player.vcam_POV.m_HorizontalAxis.Value = player.aimCam_POV.m_HorizontalAxis.Value;
+		player.vcam_POV.m_VerticalAxis.Value = player.aimCam_POV.m_VerticalAxis.Value;
 		player.vcam.gameObject.SetActive(true);
 		player.aimCam.gameObject.SetActive(false);
 		player.image_Aim.SetActive(false);
@@ -47,6 +48,10 @@ public class Player_Aim : PlayerState
 		{
 			stateMachine.ChangeState(player.idleState);
 
+		}else if(shooting)
+		{
+			player.Shoot();
+			
 		}
 
 		//화면각 계산
