@@ -1,6 +1,7 @@
 using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
@@ -114,7 +115,6 @@ public class PlayerControl : MonoBehaviour
 		var euler = rotation.eulerAngles;
 		rotationY = euler.y;
 		var roundRotationY = Mathf.RoundToInt(rotationY);
-		
 
 
 		//Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward, Color.blue, 30f);
@@ -123,6 +123,8 @@ public class PlayerControl : MonoBehaviour
 
 	public Quaternion FlatRotation => Quaternion.Euler(0, rotationY, 0);
 
+	int a1 = 0;
+	int a2 = 0;
 	private void FixedUpdate()
 	{
 		stateMachine.cur_state.FixedUpdate();
@@ -147,10 +149,10 @@ public class PlayerControl : MonoBehaviour
 		RaycastHit hit;
 
 		// 레이를 발사하고 물체에 부딪히면 물체의 위치를 가져옵니다.
-		if (Physics.Raycast(ray, out hit))
+		if (Physics.Raycast(ray, out hit, Mathf.Infinity))
 		{
 			Vector3 objectPosition = hit.point;
-			Debug.Log("중앙에 있는 물체의 위치: " + objectPosition + " " + hit.collider.gameObject.name);
+			//Debug.Log("중앙에 있는 물체의 위치: " + objectPosition + " " + hit.collider.gameObject.name);
 			return objectPosition;
 		}
 
@@ -158,12 +160,6 @@ public class PlayerControl : MonoBehaviour
 		return Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, Camera.main.nearClipPlane));
 
 
-		Debug.Log(Camera.main.ScreenPointToRay(Input.mousePosition).direction + "  flag 1 ");
-		Debug.Log(Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f)).direction + " flag 2 ");
-		
-		//return Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f)).direction;
-
-		//return aimCam.transform.position + aimCam.transform.forward * aimCam.m_Lens.FieldOfView;
 
 	}
 

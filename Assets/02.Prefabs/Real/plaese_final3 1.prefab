@@ -1281,6 +1281,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2358746152957600982}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4721829128878156634
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6442900168900655734}
+  m_Layer: 0
+  m_Name: RightBulletGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6442900168900655734
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4721829128878156634}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.63, z: 5.24}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5587785040061748164}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4814775353094860549
 GameObject:
   m_ObjectHideFlags: 0
@@ -1391,6 +1422,37 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.00051381206, y: 0.00047292933, z: 0.0013674237}
     m_Extent: {x: 0.014752276, y: 0.014532916, z: 0.012532776}
   m_DirtyAABB: 0
+--- !u!1 &5162502644724789249
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1770396611732919534}
+  m_Layer: 0
+  m_Name: LeftBulletGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1770396611732919534
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5162502644724789249}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.7, z: 5.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7397103863970608295}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5206013661462176371
 GameObject:
   m_ObjectHideFlags: 0
@@ -1532,13 +1594,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groundCheck1: {fileID: 2946393726090800510}
+  image_Aim: {fileID: 0}
+  leftBulletGenerator: {fileID: 1770396611732919534}
+  rightBulletGenerator: {fileID: 6442900168900655734}
   CC: {fileID: 0}
   anim: {fileID: 0}
   vcam: {fileID: 0}
+  aimCam: {fileID: 0}
+  vcam_trans: {fileID: 0}
+  aimcam_trans: {fileID: 0}
+  vcam_POV: {fileID: 0}
+  aimCam_POV: {fileID: 0}
   rotationY: 0
   speed: 5
   jump_power: 15
   dash_power: 60
+  prefab_bullet: {fileID: 8485350273418531428, guid: 5f667c14ab85d294c8256f782d110f0c,
+    type: 3}
 --- !u!143 &1066982917835913195
 CharacterController:
   m_ObjectHideFlags: 0
@@ -2284,7 +2356,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 4752818514486334865, guid: ed986cc556055704eb86fa5b95ea256e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6442900168900655734}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed986cc556055704eb86fa5b95ea256e, type: 3}
 --- !u!4 &5587785040061748164 stripped
@@ -2373,7 +2449,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 9002533274423376662, guid: 016c74b9afd3cf44190e8b7c49e1956b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1770396611732919534}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 016c74b9afd3cf44190e8b7c49e1956b, type: 3}
 --- !u!4 &7397103863970608295 stripped
