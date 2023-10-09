@@ -12,9 +12,9 @@ public class Player_Dash : PlayerState
 	public override void Enter()
 	{
 		base.Enter();
-		timer1 = 15 * Time.deltaTime;
+		timer1 = 30 * Time.deltaTime;
 		dash_dir = player.transform.forward;
-		Debug.Log("dash!!!");
+		//Debug.Log("dash!!!");
 	}
 
 	public override void Exit()
@@ -36,8 +36,9 @@ public class Player_Dash : PlayerState
 		}
 		else
 		{
+			Debug.Log(dash_power + " << ");
 			//rb.velocity = dash_dir.normalized * 60f;
-			CC.Move(dash_dir.normalized * 30 * Time.deltaTime);
+			CC.Move(dash_dir.normalized * dash_power * Time.deltaTime);
 
 		}
 	}

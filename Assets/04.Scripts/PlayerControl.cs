@@ -44,16 +44,19 @@ public class PlayerControl : MonoBehaviour
     public float jump_power = 500f;
 	public float dash_power = 60f;
 
-
-	//prefab
-	public GameObject prefab_bullet;
-
+	//≈∏¿Ã∏”
+	public float shoot_cool_left;
+	public float shoot_cool_right;
+	public float shoot_cool_total;
+	public bool shoot_left = true;
+	public float shoot_cool_max = 0.3f;
+	
 
 
 
 	private void Awake()
 	{
-		
+		Debug.Log("AWAKE");
 		CC = GetComponent<CharacterController>();
 		//vcam_trans = vcam.AddCinemachineComponent<CinemachineTransposer>();
 		//aimcam_trans = aimCam.AddCinemachineComponent<CinemachineTransposer>();
@@ -88,10 +91,47 @@ public class PlayerControl : MonoBehaviour
 
 	public void Shoot()
 	{
-		var a = Instantiate(prefab_bullet, leftBulletGenerator.position, Quaternion.identity);
+		if (shoot_cool_total < 0)
+		{
+			if (shoot_left)
+			{
+				Quaternion q = Quaternion.Euler(AimDetected() - leftBulletGenerator.position + new Vector3(90, 0, 0));
+				var a = Instantiate(ObjectPool.instance.prefab_bullet, leftBulletGenerator.position, Quaternion.identity);
+				shoot_cool_left = shoot_cool_max;
+				a.GetComponent<Player_Bullet>().move_dir = AimDetected();
+			}
+			else
+			{
+				Quaternion q = Quaternion.Euler(AimDetected() - rightBulletGenerator.position + new Vector3(90, 0, 0));
+				var a = Instantiate(ObjectPool.instance.prefab_bullet, rightBulletGenerator.position, Quaternion.identity);
+				shoot_cool_right = shoot_cool_max;
+				a.GetComponent<Player_Bullet>().move_dir = AimDetected();
+			}
 
-		//a.GetComponent<Player_Bullet>().move_dir = AimDetected() - leftBulletGenerator.position;
-		a.GetComponent<Player_Bullet>().move_dir = AimDetected();
+			shoot_cool_total = shoot_cool_max;
+			shoot_left = !shoot_left;
+		}
+
+		//if (shoot_cool_left < 0)
+		//{
+		//	Quaternion q = Quaternion.Euler(AimDetected() - leftBulletGenerator.position + new Vector3(90,0,0));
+			
+		//	var a = Instantiate(ObjectPool.instance.prefab_bullet, leftBulletGenerator.position, Quaternion.identity);
+		//	shoot_cool_left = shoot_cool_max;
+		//	a.GetComponent<Player_Bullet>().move_dir = AimDetected();
+		//	Debug.Log("øﬁ11");
+		//}
+		//else if (shoot_cool_right < 0 )
+		//{
+		//	Quaternion q = Quaternion.Euler(AimDetected() - rightBulletGenerator.position + new Vector3(90, 0, 0) );
+		//	var a = Instantiate(ObjectPool.instance.prefab_bullet, rightBulletGenerator.position, Quaternion.identity);
+		//	shoot_cool_right = shoot_cool_max;
+		//	a.GetComponent<Player_Bullet>().move_dir = AimDetected();
+		//	Debug.Log("øÏ22");
+		//}
+		
+		
+
 
 
 	}
@@ -118,7 +158,9 @@ public class PlayerControl : MonoBehaviour
 
 
 		//Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward, Color.blue, 30f);
-
+		shoot_cool_left -= Time.deltaTime;
+		shoot_cool_right -= Time.deltaTime;
+		shoot_cool_total -= Time.deltaTime;
 	}
 
 	public Quaternion FlatRotation => Quaternion.Euler(0, rotationY, 0);
