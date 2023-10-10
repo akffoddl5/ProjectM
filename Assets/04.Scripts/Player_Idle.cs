@@ -11,6 +11,8 @@ public class Player_Idle : PlayerState
 	public override void Enter()
 	{
 		base.Enter();
+		//Debug.Log("idle enter");
+		//Debug.Log(player.body.transform.localRotation.eulerAngles + " :: 2 " + player.body.transform.rotation.eulerAngles);
 	}
 
 	public override void Exit()
@@ -26,6 +28,7 @@ public class Player_Idle : PlayerState
 
 		if (!player.GroundDetected())
 		{
+			Debug.Log("red222");
 			stateMachine.ChangeState(player.airState);
 		}
 		else if (aiming)

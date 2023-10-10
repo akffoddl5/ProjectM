@@ -35,6 +35,7 @@ public class PlayerControl : MonoBehaviour
 	public CinemachineTransposer aimcam_trans;
 	public CinemachinePOV vcam_POV;
 	public CinemachinePOV aimCam_POV;
+	
 
 	public float rotationY;
 
@@ -50,12 +51,15 @@ public class PlayerControl : MonoBehaviour
 	public float shoot_cool_total;
 	public bool shoot_left = true;
 	public float shoot_cool_max = 0.3f;
-	
 
+	//Rig
+	public GameObject body;
+	
 
 
 	private void Awake()
 	{
+		
 		Debug.Log("AWAKE");
 		CC = GetComponent<CharacterController>();
 		//vcam_trans = vcam.AddCinemachineComponent<CinemachineTransposer>();
@@ -66,7 +70,8 @@ public class PlayerControl : MonoBehaviour
 
 
 		//rb = GetComponent<Rigidbody>();
-		anim = GetComponent<Animator>();
+		
+		anim = GetComponentInChildren<Animator>();
 		image_Aim = GameObject.Find("Image_Aim");
 		image_Aim.SetActive(false);
 		stateMachine = new StateMachine();
@@ -207,11 +212,9 @@ public class PlayerControl : MonoBehaviour
 
 	private void OnDrawGizmos()
 	{
-		Gizmos.DrawSphere(groundCheck1.position, 0.5f);
+		Gizmos.DrawWireSphere(groundCheck1.position, 0.5f);
 
 		Gizmos.DrawLine(leftBulletGenerator.position, AimDetected()); 
-		
-		
 		//ray = new Ray(firePos.position, dir);
 	}
 }

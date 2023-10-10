@@ -15,7 +15,9 @@ public class Player_Bullet : MonoBehaviour
 
 	void Update()
     {
-        //transform.position = transform.position + move_dir * move_speed * Time.deltaTime;
+	//	Vector3 _dir = move_dir - transform.position;
+        //transform.position = (_dir).normalized * move_speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, move_dir, 0.9f);
+		
 	}
 }

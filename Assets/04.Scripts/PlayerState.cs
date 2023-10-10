@@ -80,46 +80,6 @@ public class PlayerState
 		dash_cool -= Time.deltaTime;
 		timer1 -= Time.deltaTime;
 
-		//Vector3 dir = new Vector3(get_X, get_Jump, get_Y);
-		//CC.Move(dir * Time.deltaTime);
-		//Debug.Log(dir + " " + Physics.gravity.y);
-		//get_Jump += Physics.gravity.y * Time.deltaTime;
-
-		//if (dash_init_cool_timer < 0)
-		//{
-		//	last_keycode = 0;
-		//	last_XY = 'O';
-		//}
-
-
-		//if (get_Y != 0)
-		//{
-		//	Debug.Log("flag1" + last_keycode + last_XY);
-		//	if (last_keycode == get_Y && last_XY == 'Y')
-		//	{
-		//		//대쉬
-		//		stateMachine.ChangeState(player.dashState);
-		//	}
-		//	last_XY = 'Y';
-		//	last_keycode = get_Y;
-		//}
-
-		//if (get_X != 0)
-		//{
-		//	if (last_keycode == get_X && last_XY == 'X')
-		//	{
-		//		//대쉬
-		//		stateMachine.ChangeState(player.dashState);
-		//	}
-		//	last_XY = 'X';
-		//	last_keycode = get_X;
-		//}
-
-
-
-
-
-		//dash_init_cool_timer -= Time.deltaTime;
 
 	}
 

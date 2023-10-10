@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player_Aim : PlayerState
 {
-
-
+	int roundRotationY;
 	
+
+
 	public Player_Aim(string animBoolName, StateMachine stateMachine, PlayerControl player) : base(animBoolName, stateMachine, player)
 	{
 	}
@@ -14,9 +16,9 @@ public class Player_Aim : PlayerState
 	public override void Enter()
 	{
 		base.Enter();
+		//Camera.main.cullingMask -= LayerMask.GetMask("Player");
+		Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Player"));
 
-		
-		
 		player.vcam.gameObject.SetActive(false);
 		player.aimCam.gameObject.SetActive(true);
 		player.image_Aim.SetActive(true);
@@ -29,11 +31,19 @@ public class Player_Aim : PlayerState
 	public override void Exit()
 	{
 		base.Exit();
+		Camera.main.cullingMask |= (1 << LayerMask.NameToLayer("Player"));
+		player.body.transform.localRotation = Quaternion.identity;
+		Debug.Log(player.body.transform.localRotation.eulerAngles + " :: 66 " + player.body.transform.rotation.eulerAngles);
+		Debug.Log("rotation77 ");
+
 		player.vcam_POV.m_HorizontalAxis.Value = player.aimCam_POV.m_HorizontalAxis.Value;
 		player.vcam_POV.m_VerticalAxis.Value = player.aimCam_POV.m_VerticalAxis.Value;
 		player.vcam.gameObject.SetActive(true);
 		player.aimCam.gameObject.SetActive(false);
 		player.image_Aim.SetActive(false);
+
+		
+		
 	}
 
 	public override void FixedUpdate()
@@ -47,6 +57,7 @@ public class Player_Aim : PlayerState
 		if (aiming_out)
 		{
 			stateMachine.ChangeState(player.idleState);
+			return;
 
 		}else if(shooting)
 		{
@@ -60,11 +71,17 @@ public class Player_Aim : PlayerState
 		var rotation = state.FinalOrientation;
 		var euler = rotation.eulerAngles;
 		float rotationY = euler.y;
-		var roundRotationY = Mathf.RoundToInt(rotationY);
+		roundRotationY = Mathf.RoundToInt(rotationY);
 
 		//Quaternion requireRotation = Quaternion.LookRotation(dir);
 		//player.transform.rotation = requireRotation;
-		player.transform.rotation = player.FlatRotation;
-		player.transform.rotation = Quaternion.Euler(0, roundRotationY, 0);
+
+		//Quaternion requireRotation = Quaternion.LookRotation(dir);
+		//player.transform.rotation = requireRotation;
+		player.transform.rotation = Quaternion.Euler(0, rotationY, 0);
+		player.body.transform.localRotation = Quaternion.Euler(rotation.eulerAngles.x, 0, 0);
+		Debug.Log(rotation.eulerAngles.x);
+
+		//player.spine
 	}
 }
