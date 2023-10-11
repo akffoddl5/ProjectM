@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,6 +17,7 @@ public class Player_Aim : PlayerState
 	public override void Enter()
 	{
 		base.Enter();
+		
 		//Camera.main.cullingMask -= LayerMask.GetMask("Player");
 		Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Player"));
 
@@ -80,7 +82,7 @@ public class Player_Aim : PlayerState
 		//player.transform.rotation = requireRotation;
 		player.transform.rotation = Quaternion.Euler(0, rotationY, 0);
 		player.body.transform.localRotation = Quaternion.Euler(rotation.eulerAngles.x, 0, 0);
-		Debug.Log(rotation.eulerAngles.x);
+		//Debug.Log(rotation.eulerAngles.x);
 
 		//player.spine
 	}

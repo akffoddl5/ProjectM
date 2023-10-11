@@ -94,6 +94,30 @@ public class PlayerControl : MonoBehaviour
 		return Mathf.Clamp(lfAngle, lfMin, lfMax);
 	}
 
+	public IEnumerator IShoot_Shake()
+	{
+		aimCam_POV.m_VerticalAxis.Value -= 3;
+		
+		//GameObject.Find("Flare Gun_L").GetComponent<Rigidbody>().AddForce(new Vector3(0, 10, 0));
+
+		//Debug.Log("cor shake2" + body.transform.rotation.eulerAngles);
+
+		//body.transform.Rotate(-30f, 0, 0);
+
+		//Debug.Log("cor shake2" + body.transform.rotation.eulerAngles);
+		//var a = aimCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+		//a.m_PivotOffset = new Vector3(0, 50, 0);
+		//a.m_FrequencyGain = 0.1f;
+
+		//yield return new WaitForSeconds(0.4f);
+		yield return null;
+
+		//a = aimCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+		//a.m_PivotOffset = new Vector3(0, 10, 0);
+		//a.m_FrequencyGain = 0.01f;
+
+	}
+
 	public void Shoot()
 	{
 		if (shoot_cool_total < 0)
@@ -115,6 +139,7 @@ public class PlayerControl : MonoBehaviour
 
 			shoot_cool_total = shoot_cool_max;
 			shoot_left = !shoot_left;
+			StartCoroutine(IShoot_Shake());
 		}
 
 		//if (shoot_cool_left < 0)
