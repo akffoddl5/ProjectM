@@ -96,7 +96,7 @@ public class PlayerControl : MonoBehaviour
 
 	public IEnumerator IShoot_Shake()
 	{
-		aimCam_POV.m_VerticalAxis.Value -= 3;
+		aimCam_POV.m_VerticalAxis.Value -= 0.5f;
 		
 		//GameObject.Find("Flare Gun_L").GetComponent<Rigidbody>().AddForce(new Vector3(0, 10, 0));
 
@@ -124,15 +124,17 @@ public class PlayerControl : MonoBehaviour
 		{
 			if (shoot_left)
 			{
-				Quaternion q = Quaternion.Euler(AimDetected() - leftBulletGenerator.position + new Vector3(90, 0, 0));
-				var a = Instantiate(ObjectPool.instance.prefab_bullet, leftBulletGenerator.position, Quaternion.identity);
+				//Quaternion q = Quaternion.Euler(AimDetected() - leftBulletGenerator.position + new Vector3(90, 0, 0));
+				Quaternion q = Quaternion.Euler(AimDetected() - leftBulletGenerator.position);
+				var a = Instantiate(ObjectPool.instance.prefab_bullet, leftBulletGenerator.position, leftBulletGenerator.rotation);
 				shoot_cool_left = shoot_cool_max;
 				a.GetComponent<Player_Bullet>().move_dir = AimDetected();
 			}
 			else
 			{
-				Quaternion q = Quaternion.Euler(AimDetected() - rightBulletGenerator.position + new Vector3(90, 0, 0));
-				var a = Instantiate(ObjectPool.instance.prefab_bullet, rightBulletGenerator.position, Quaternion.identity);
+				//Quaternion q = Quaternion.Euler(AimDetected() - rightBulletGenerator.position + new Vector3(90, 0, 0));
+				Quaternion q = Quaternion.Euler(AimDetected() - rightBulletGenerator.position);
+				var a = Instantiate(ObjectPool.instance.prefab_bullet, rightBulletGenerator.position, leftBulletGenerator.rotation);
 				shoot_cool_right = shoot_cool_max;
 				a.GetComponent<Player_Bullet>().move_dir = AimDetected();
 			}
@@ -217,10 +219,12 @@ public class PlayerControl : MonoBehaviour
 
 		Vector3 screenCenter = new Vector3(0.5f, 0.5f, 0f);
 		Ray ray = Camera.main.ViewportPointToRay(screenCenter);
+		
 		// 화면 중앙을 조준 위치로 설정합니다.
 		RaycastHit hit;
 
 		// 레이를 발사하고 물체에 부딪히면 물체의 위치를 가져옵니다.
+		
 		if (Physics.Raycast(ray, out hit, Mathf.Infinity))
 		{
 			Vector3 objectPosition = hit.point;
@@ -239,7 +243,7 @@ public class PlayerControl : MonoBehaviour
 	{
 		Gizmos.DrawWireSphere(groundCheck1.position, 0.5f);
 
-		Gizmos.DrawLine(leftBulletGenerator.position, AimDetected()); 
+		//Gizmos.DrawLine(leftBulletGenerator.position, AimDetected()); 
 		//ray = new Ray(firePos.position, dir);
 	}
 }

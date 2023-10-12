@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HS_ProjectileMover : MonoBehaviour
 {
-    public float speed = 15f;
+    public float speed = 35f;
     public float hitOffset = 0f;
     public bool UseFirePointRotation;
     public Vector3 rotationOffset = new Vector3(0, 0, 0);
@@ -34,16 +34,16 @@ public class HS_ProjectileMover : MonoBehaviour
                 Destroy(flashInstance, flashPsParts.main.duration);
             }
         }
-        Destroy(gameObject,5);
+        
 	}
 
     void FixedUpdate ()
     {
-		if (speed != 0)
-        {
-            rb.velocity = transform.forward * speed;
-            //transform.position += transform.forward * (speed * Time.deltaTime);         
-        }
+		//if (speed != 0)
+		//{
+		//	rb.velocity = transform.forward * speed * Time.deltaTime;
+		//	//transform.position += transform.forward * (speed * Time.deltaTime);       /  
+		//}
 	}
 
     //https ://docs.unity3d.com/ScriptReference/Rigidbody.OnCollisionEnter.html
@@ -56,6 +56,11 @@ public class HS_ProjectileMover : MonoBehaviour
         ContactPoint contact = collision.contacts[0];
         Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
         Vector3 pos = contact.point + contact.normal * hitOffset;
+
+        
+
+
+
 
         //Spawn hit effect on collision
         if (hit != null)
