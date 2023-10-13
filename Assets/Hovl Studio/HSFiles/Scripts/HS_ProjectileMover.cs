@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HS_ProjectileMover : MonoBehaviour
 {
-    public float speed = 35f;
+    public float speed = 70f;
     public float hitOffset = 0f;
     public bool UseFirePointRotation;
     public Vector3 rotationOffset = new Vector3(0, 0, 0);
@@ -39,16 +39,18 @@ public class HS_ProjectileMover : MonoBehaviour
 
     void FixedUpdate ()
     {
-		//if (speed != 0)
-		//{
-		//	rb.velocity = transform.forward * speed * Time.deltaTime;
-		//	//transform.position += transform.forward * (speed * Time.deltaTime);       /  
-		//}
-	}
+        if (speed != 0)
+        {
+            //rb.velocity = transform.forward * speed * Time.deltaTime;
+            //transform.position += transform.forward * (speed * Time.deltaTime);       
+        }
+    }
 
     //https ://docs.unity3d.com/ScriptReference/Rigidbody.OnCollisionEnter.html
     void OnCollisionEnter(Collision collision)
     {
+
+        Debug.Log("collision enter");
         //Lock all axes movement and rotation
         rb.constraints = RigidbodyConstraints.FreezeAll;
         speed = 0;

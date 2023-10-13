@@ -35,8 +35,8 @@ public class Player_Aim : PlayerState
 		base.Exit();
 		Camera.main.cullingMask |= (1 << LayerMask.NameToLayer("Player"));
 		player.body.transform.localRotation = Quaternion.identity;
-		Debug.Log(player.body.transform.localRotation.eulerAngles + " :: 66 " + player.body.transform.rotation.eulerAngles);
-		Debug.Log("rotation77 ");
+		//Debug.Log(player.body.transform.localRotation.eulerAngles + " :: 66 " + player.body.transform.rotation.eulerAngles);
+		//Debug.Log("rotation77 ");
 
 		player.vcam_POV.m_HorizontalAxis.Value = player.aimCam_POV.m_HorizontalAxis.Value;
 		player.vcam_POV.m_VerticalAxis.Value = player.aimCam_POV.m_VerticalAxis.Value;

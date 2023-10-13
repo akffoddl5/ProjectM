@@ -28,7 +28,7 @@ public class Player_Idle : PlayerState
 
 		if (!player.GroundDetected())
 		{
-			Debug.Log("red222");
+			//Debug.Log("red222");
 			stateMachine.ChangeState(player.airState);
 		}
 		else if (aiming)
