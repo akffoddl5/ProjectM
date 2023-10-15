@@ -15,6 +15,7 @@ public class HS_ProjectileMover : MonoBehaviour
 
     void Start()
     {
+        speed = 700f;
         rb = GetComponent<Rigidbody>();
         if (flash != null)
         {
@@ -41,7 +42,7 @@ public class HS_ProjectileMover : MonoBehaviour
     {
         if (speed != 0)
         {
-            //rb.velocity = transform.forward * speed * Time.deltaTime;
+            rb.velocity = transform.forward * speed * Time.deltaTime;
             //transform.position += transform.forward * (speed * Time.deltaTime);       
         }
     }

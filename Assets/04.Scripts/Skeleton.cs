@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class Skeleton : Enemy
 {
-	NavMeshAgent agent;
 	void Start()
     {
 		agent = GetComponent<NavMeshAgent>();

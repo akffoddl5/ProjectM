@@ -54,6 +54,11 @@ public class PlayerControl : MonoBehaviour
 
 	//Rig
 	public GameObject body;
+
+	//status
+	public float hp;
+	public float hp_max;
+	
 	
 
 
@@ -172,8 +177,8 @@ public class PlayerControl : MonoBehaviour
 
 	void Start()
     {
-		//Cursor.visible = false;;
-		//Cursor.lockState = CursorLockMode.Locked;
+		Cursor.visible = false;;
+		Cursor.lockState = CursorLockMode.Locked;
         stateMachine.cur_state.Enter();
 	}
 
