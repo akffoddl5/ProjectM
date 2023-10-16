@@ -52,9 +52,13 @@ public class Mummy : Enemy
 
     public void Shoot()
     {
-        Debug.Log("shoot");
+        //Debug.Log("shoot" + player.transform.position + " À¸·Î \n" + (player.transform.position - attack_generator.transform.position));
+
+        //var b = Quaternion.LookRotation(player.transform.position - attack_generator.transform.position);
+        //Debug.Log(b);
+
         var a = Instantiate(tornado_bullet, attack_generator.transform.position, Quaternion.identity);
-        a.transform.LookAt(player.transform);
+        //a.transform.LookAt(player.transform);
         
     }
 

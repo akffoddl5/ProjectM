@@ -76,6 +76,7 @@ public class Mummy_Attack : StateMachineBehaviour
 		if (animator.GetComponent<Mummy>().attack_done)
 		{
 			animator.GetComponent<Mummy>().attack_done = false;
+			animator.GetComponent<Mummy>().Shoot();
 			Destroy(detect_line);
 			
 			animator.SetBool("Move", true);
@@ -84,7 +85,7 @@ public class Mummy_Attack : StateMachineBehaviour
 			//animator.GetComponent<Mummy>().tornado_obj.GetComponent<DelayActive>().m_activeObj[1].SetActive(true);
 			//animator.GetComponent<Mummy>().tornado_obj.GetComponent<DelayActive>().m_activeObj[1].transform.LookAt(player.transform.position);
 
-			animator.GetComponent<Mummy>().Shoot();
+			
 
 			//animator.GetComponent<Mummy>().tornado_obj.GetComponent<DelayActive>().m_activeObj[1].SetActive(true);
 			//animator.GetComponent<Mummy>().tornado_obj.transform.LookAt(player.transform.position);

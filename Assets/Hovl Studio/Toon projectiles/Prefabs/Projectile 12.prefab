@@ -4855,7 +4855,7 @@ GameObject:
   - component: {fileID: 199040005921224812}
   - component: {fileID: 135082591024905920}
   - component: {fileID: 108350145910942764}
-  - component: {fileID: 1004111774810262702}
+  - component: {fileID: -8696246550035824828}
   m_Layer: 0
   m_Name: Projectile 12
   m_TagString: Untagged
@@ -4873,7 +4873,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 9, y: 9, z: 9}
+  m_LocalScale: {x: 7, y: 7, z: 7}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4004346157029350}
@@ -9875,7 +9875,7 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &1004111774810262702
+--- !u!114 &-8696246550035824828
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

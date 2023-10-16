@@ -18,21 +18,22 @@ public class VariousTranslateMove : MonoBehaviour {
     }
 
 	void Update () {
-        m_changedFactor = VariousEffectsScene.m_gaph_scenesizefactor;
+        transform.position += transform.forward * 0.2f;
+        //m_changedFactor = VariousEffectsScene.m_gaph_scenesizefactor;
 
-        if (m_fowardMove)
-            transform.Translate(transform.forward * m_power * m_changedFactor);
-        if (m_rightMove)
-            transform.Translate(transform.right * m_power* m_changedFactor);
-        if (m_upMove)
-            transform.Translate(transform.up * m_power* m_changedFactor);
+        //if (m_fowardMove)
+        //    transform.Translate(transform.forward * m_power * m_changedFactor);
+        //if (m_rightMove)
+        //    transform.Translate(transform.right * m_power* m_changedFactor);
+        //if (m_upMove)
+        //    transform.Translate(transform.up * m_power* m_changedFactor);
 
-        //transform.LookAt(Vector3.zero);
+        ////transform.LookAt(Vector3.zero);
 
-        if (m_Time + m_reduceTime < Time.time && m_reduceTime != 0)
-        {
-            m_power -= Time.deltaTime;
-            m_power = Mathf.Clamp01(m_power);
-        }
+        //if (m_Time + m_reduceTime < Time.time && m_reduceTime != 0)
+        //{
+        //    m_power -= Time.deltaTime;
+        //    m_power = Mathf.Clamp01(m_power);
+        //}
     }
 }

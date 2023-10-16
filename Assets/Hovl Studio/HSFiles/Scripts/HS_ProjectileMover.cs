@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HS_ProjectileMover : MonoBehaviour
 {
-    public float speed = 70f;
+    public float speed = 15f;
     public float hitOffset = 0f;
     public bool UseFirePointRotation;
     public Vector3 rotationOffset = new Vector3(0, 0, 0);
@@ -12,10 +12,13 @@ public class HS_ProjectileMover : MonoBehaviour
     public GameObject flash;
     private Rigidbody rb;
     public GameObject[] Detached;
+    public Vector3 player_pos;
+    public Vector3 _dir;
 
     void Start()
     {
-        speed = 70f;
+        player_pos = GameObject.FindWithTag("Player").transform.position;
+        _dir = (player_pos - transform.position).normalized;
         rb = GetComponent<Rigidbody>();
         if (flash != null)
         {
@@ -35,23 +38,23 @@ public class HS_ProjectileMover : MonoBehaviour
                 Destroy(flashInstance, flashPsParts.main.duration);
             }
         }
-        
+        Destroy(gameObject,5);
 	}
 
     void FixedUpdate ()
     {
-        if (speed != 0)
+        
+		if (speed != 0)
         {
-            rb.velocity = transform.forward * speed * Time.deltaTime;
-            //transform.position += transform.forward * (speed * Time.deltaTime);       
+            //rb.velocity = transform.forward * speed;
+            rb.velocity = _dir * speed;
+            //transform.position += transform.forward * (speed * Time.deltaTime);         
         }
-    }
+	}
 
     //https ://docs.unity3d.com/ScriptReference/Rigidbody.OnCollisionEnter.html
     void OnCollisionEnter(Collision collision)
     {
-
-        Debug.Log("collision enter" + collision.gameObject.name);
         //Lock all axes movement and rotation
         rb.constraints = RigidbodyConstraints.FreezeAll;
         speed = 0;
@@ -59,11 +62,6 @@ public class HS_ProjectileMover : MonoBehaviour
         ContactPoint contact = collision.contacts[0];
         Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
         Vector3 pos = contact.point + contact.normal * hitOffset;
-
-        
-
-
-
 
         //Spawn hit effect on collision
         if (hit != null)

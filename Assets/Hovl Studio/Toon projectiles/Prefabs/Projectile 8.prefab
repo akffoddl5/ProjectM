@@ -9705,7 +9705,7 @@ GameObject:
   - component: {fileID: 199241998596188280}
   - component: {fileID: 135288747172905598}
   - component: {fileID: 108123500265719484}
-  - component: {fileID: 8139231272554755864}
+  - component: {fileID: -3141327432018098561}
   m_Layer: 0
   m_Name: Projectile 8
   m_TagString: Untagged
@@ -14724,7 +14724,7 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &8139231272554755864
+--- !u!114 &-3141327432018098561
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
