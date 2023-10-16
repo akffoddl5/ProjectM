@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 
-public class Mummy : MonoBehaviour
+public class Mummy : Enemy
 {
+	public GameObject attack_generator;
+	public bool attack_done = false;
+	public GameObject tornado;
+    public GameObject tornado_obj;
+    public GameObject tornado_bullet;
 
-    public bool attack_done = false;
-    // Start is called before the first frame update
-    void Start()
+	void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -22,6 +25,7 @@ public class Mummy : MonoBehaviour
     {
         StartCoroutine(IRed_line_blink(_time, _red_line));
     }
+
     IEnumerator IRed_line_blink(float _time, GameObject _red_line)
     {
         while (_time > 0)
@@ -29,12 +33,40 @@ public class Mummy : MonoBehaviour
             _time -= Time.deltaTime;
 
             _red_line.SetActive(!_red_line.activeSelf);
-            yield return new WaitForSeconds(0.3f);
-
+            yield return new WaitForSeconds(0.05f);
         }
-
         attack_done = true;
 
+		
+	}
 
+    public void AttackMotion()
+    {
+		tornado_obj = Instantiate(tornado, attack_generator.transform.position, Quaternion.identity);
+		//a.transform.LookAt(player.transform.position);
+		
+
+
+		StartCoroutine(MakeBig(tornado_obj));
+	}
+
+    public void Shoot()
+    {
+        Debug.Log("shoot");
+        var a = Instantiate(tornado_bullet, attack_generator.transform.position, Quaternion.identity);
+        
+        
+    }
+
+    IEnumerator MakeBig(GameObject a) {
+        while (a.transform.localScale.x < 0.4f)
+        {
+            a.transform.localScale += new Vector3(0.003f, 0.003f, 0.003f);
+
+            //yield return new WaitForSeconds(0.1f);
+            yield return null;
+		}
+
+        
     }
 }

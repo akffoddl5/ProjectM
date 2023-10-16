@@ -177,9 +177,9 @@ public class PlayerControl : MonoBehaviour
 
 	void Start()
     {
-		Cursor.visible = false;;
+		Cursor.visible = false;
 		Cursor.lockState = CursorLockMode.Locked;
-        stateMachine.cur_state.Enter();
+		stateMachine.cur_state.Enter();
 	}
 
     void Update()

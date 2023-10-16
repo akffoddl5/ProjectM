@@ -66,6 +66,7 @@ public class PlayerState
 	{
 		get_X = Input.GetAxisRaw("Horizontal");
 		get_Y = Input.GetAxisRaw("Vertical");
+		//Debug.Log(get_X + " " + get_Y);
 		get_Space = Input.GetKeyDown(KeyCode.Space);
 		aiming = Input.GetMouseButtonDown(1);
 		shooting = Input.GetMouseButton(0);

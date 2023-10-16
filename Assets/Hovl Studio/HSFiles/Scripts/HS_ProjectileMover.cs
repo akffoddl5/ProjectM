@@ -15,7 +15,7 @@ public class HS_ProjectileMover : MonoBehaviour
 
     void Start()
     {
-        speed = 700f;
+        speed = 70f;
         rb = GetComponent<Rigidbody>();
         if (flash != null)
         {
@@ -51,7 +51,7 @@ public class HS_ProjectileMover : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
 
-        Debug.Log("collision enter");
+        Debug.Log("collision enter" + collision.gameObject.name);
         //Lock all axes movement and rotation
         rb.constraints = RigidbodyConstraints.FreezeAll;
         speed = 0;

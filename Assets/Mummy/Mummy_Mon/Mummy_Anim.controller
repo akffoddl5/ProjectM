@@ -39,8 +39,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7d1592455c3714890f8c692fad3727, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attack_generator: {fileID: 0}
   red_line: {fileID: 8651707069315843451, guid: 20d1472cd68573246beea19c6b7c75ad,
     type: 3}
+  tornado: {fileID: 426496798927331430, guid: 1abafa90d6c07e04fae4c4a9e01759b8, type: 3}
   timer1: 0
   timer2: 0
 --- !u!1109 &-2236478080116030787
@@ -275,8 +277,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: f5b60a7941e1c654abcba178db338929,
-    type: 3}
+  m_Motion: {fileID: 7400000, guid: 72b56a31eea42b543a4bfee40e340eb4, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

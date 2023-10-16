@@ -24,7 +24,7 @@ public class Mummy_Move : StateMachineBehaviour
 
 		float distance = Vector3.Distance(player.position, animator.transform.position);
 
-		if (distance < 3f)
+		if (distance < 20f)
 		{
 			animator.SetBool("Move", false);
 			animator.SetBool("Attack", true);

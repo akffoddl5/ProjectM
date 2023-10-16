@@ -12,10 +12,17 @@ public class Enemy : MonoBehaviour
     public Slider hp_slider;
     public Text hp_text;
     public Animator anim;
+    public GameObject player;
+
+	private void Awake()
+	{
+		player = GameObject.FindGameObjectWithTag("Player");
+	}
 
 	private void Start()
 	{
         anim = GetComponent<Animator>();
+		
 	}
 
 	public virtual void Damage(float _damage) { }
