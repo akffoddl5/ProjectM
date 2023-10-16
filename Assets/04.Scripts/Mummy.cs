@@ -54,7 +54,7 @@ public class Mummy : Enemy
     {
         Debug.Log("shoot");
         var a = Instantiate(tornado_bullet, attack_generator.transform.position, Quaternion.identity);
-        
+        a.transform.LookAt(player.transform);
         
     }
 
