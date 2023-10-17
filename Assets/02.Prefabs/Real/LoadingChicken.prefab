@@ -338,6 +338,7 @@ GameObject:
   - component: {fileID: 4931465052948119986}
   - component: {fileID: 3327649150364129333}
   - component: {fileID: 5515773563017009830}
+  - component: {fileID: -8984468567109668114}
   m_Layer: 0
   m_Name: LoadingChicken
   m_TagString: Untagged
@@ -453,6 +454,20 @@ CapsuleCollider:
   m_Height: 0.46364212
   m_Direction: 1
   m_Center: {x: -0.00078582764, y: 0.22506905, z: 0}
+--- !u!114 &-8984468567109668114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3382552163122889065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 633adb4a23285c244bfce0be8c1bcddd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  setRotate: 0
 --- !u!1 &3476115913236698701
 GameObject:
   m_ObjectHideFlags: 0

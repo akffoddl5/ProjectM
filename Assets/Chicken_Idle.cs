@@ -37,8 +37,8 @@ public class Chicken_Idle : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         
-
-		animator.transform.Rotate(new Vector3(0, b, 0));
+        if(!animator.GetComponent<Chicken>().setRotate)
+		    animator.transform.Rotate(new Vector3(0, b, 0));
         //animator.transform.Rotate(new Vector3(0, 2f, 0));
     }
 
