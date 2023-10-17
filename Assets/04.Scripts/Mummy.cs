@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Mummy : Enemy
 {
@@ -13,8 +14,15 @@ public class Mummy : Enemy
 
 	void Start()
     {
-        
-    }
+		agent = GetComponent<NavMeshAgent>();
+		hp_max = 700;
+		hp = hp_max;
+		hp_text.text = hp_max + "/" + hp_max;
+		hp_slider.maxValue = hp_max;
+		hp_slider.value = hp;
+
+		hp_slider.gameObject.GetComponent<RectTransform>().localScale = new Vector3(hp_max * 0.003f, hp_slider.gameObject.GetComponent<RectTransform>().localScale.y, hp_slider.gameObject.GetComponent<RectTransform>().localScale.z);
+	}
 
     void Update()
     {
@@ -73,4 +81,13 @@ public class Mummy : Enemy
 
         
     }
+
+	public override void Die()
+	{
+		agent.speed = 0f;
+		anim.SetBool("Die", true);
+		Destroy(gameObject, 5f);
+
+
+	}
 }

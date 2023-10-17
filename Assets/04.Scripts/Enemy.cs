@@ -23,9 +23,29 @@ public class Enemy : MonoBehaviour
 	{
         anim = GetComponent<Animator>();
 		
+		
 	}
 
-	public virtual void Damage(float _damage) { }
+	public virtual void Damage(float _damage) {
+		//Debug.Log("damage " + _damage);
+		hp -= _damage;
 
-    public virtual void Die() { }
+		hp_text.text = (int)Mathf.Clamp(hp, 0, hp_max) + "/" + hp_max;
+		hp_slider.value = hp;
+
+		if (hp <= 0) hp_slider.gameObject.SetActive(false);
+
+		if (hp <= 0)
+		{
+			hp = 0;
+			Die();
+
+		}
+	}
+
+    public virtual void Die() {
+		agent.speed = 0f;
+		anim.SetBool("Die", true);
+		Destroy(gameObject, 1.5f);
+	}
 }

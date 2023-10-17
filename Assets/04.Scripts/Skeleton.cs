@@ -8,8 +8,9 @@ public class Skeleton : Enemy
 {
 	void Start()
     {
+        
 		agent = GetComponent<NavMeshAgent>();
-		hp_max = 700;
+		hp_max = 150;
         hp = hp_max;
         hp_text.text = hp_max + "/" + hp_max;
         hp_slider.maxValue = hp_max;
@@ -23,29 +24,14 @@ public class Skeleton : Enemy
         
     }
 
-    public override void Damage(float _damage)
-    {
+    //public override void Damage(float _damage)
+    //{
        
-        //Debug.Log("damage " + _damage);
-        hp -= _damage;
         
-        hp_text.text = (int)Mathf.Clamp(hp, 0, hp_max) + "/" + hp_max;
-        hp_slider.value = hp;
+    //}
 
-        if (hp <= 0) hp_slider.gameObject.SetActive(false);
-
-        if (hp <= 0)
-        {
-            hp = 0;
-            Die();
-
-        }
-    }
-
-    public override void Die()
-    {
-        agent.speed = 0f;
-		anim.SetBool("Die", true);
-        Destroy(gameObject,1.5f);
-    }
+    //public override void Die()
+    //{
+        
+    //}
 }
