@@ -22,6 +22,10 @@ public class LoadSceneManager : MonoBehaviour
 	public GameObject main_item_button;
 	public GameObject main_exit_button;
 
+	//cut scene
+	public GameObject cut_scene;
+
+
 	
 
 
@@ -30,7 +34,7 @@ public class LoadSceneManager : MonoBehaviour
 	{
 		RectTransform RT = gameObject.GetComponent<RectTransform>();
 		RT.localPosition = start_pos;
-		while (Vector3.Distance(RT.localPosition, des_pos) > 1f)
+		while (Vector3.Distance(RT.localPosition, des_pos) > 0.1f)
 		{
 			//Debug.Log(Vector3.Distance(RT.localPosition, des_pos));
 			RT.localPosition = Vector3.Lerp(RT.localPosition, des_pos, 0.05f);
@@ -91,16 +95,38 @@ public class LoadSceneManager : MonoBehaviour
 		yield break;
 	}
 
+	IEnumerator ScrollOff()
+	{
+		while (item_scroll.transform.localScale.y > 0 )
+		{
+			item_scroll.transform.localScale -= new Vector3(0, 0.02f, 0);
+			yield return null;
+		}
+		yield break;
+	}
+
 	public void ScrollBack()
 	{
 		Debug.Log("scroll back");
 		main_cam.SetActive(true);
 		item_scroll_cam.SetActive(false);
+		StartCoroutine(CorLerp(main_text, new Vector3(0, 765, 0), new Vector3(0, 359, 0) ));
+		StartCoroutine(CorLerp(main_exit_button, new Vector3(-1176, 104, 0), new Vector3(-847, -388, 0)));
+		StartCoroutine(CorLerp(main_game_start_button, new Vector3(1242, -206, 0),  new Vector3(659, -206, 0)));
+		StartCoroutine(CorLerp(main_item_button, new Vector3(1242, -383, 0), new Vector3(659, -383, 0) ));
+		StartCoroutine(ScrollOff());
 		ninja.GetComponent<Animator>().Play("Two Hand Spell Casting (1)");
 	}
 
 	public void GameStart()
 	{
+		Debug.Log("gamestart");
+		StartCoroutine(CorLerp(main_text, new Vector3(0, 359, 0), new Vector3(0, 765, 0)));
+		StartCoroutine(CorLerp(main_exit_button, new Vector3(-847, -388, 0), new Vector3(-1176, 104, 0)));
+		StartCoroutine(CorLerp(main_game_start_button, new Vector3(659, -206, 0), new Vector3(1242, -206, 0)));
+		StartCoroutine(CorLerp(main_item_button, new Vector3(659, -383, 0), new Vector3(1242, -383, 0)));
+		cut_scene.SetActive(true);
+
 
 	}
 
