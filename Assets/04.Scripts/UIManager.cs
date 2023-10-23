@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+	public static UIManager instance;
+
 	public Slider option_left_slider;
 	public Slider option_right_slider;
 	public Image option_left_graph;
@@ -25,9 +27,31 @@ public class UIManager : MonoBehaviour
 	public Image health_bar;
 	public Text health_text;
 
+	//¶ó¿îµå
+	public Image level_bar;
+	public Text level_text;
+	public Text round_text;
+
 	public PlayerControl player;
 
+	//public void LevelSet(int _level, float _current_per)
+	//{
+		
+	//}
 
+
+	private void Awake()
+	{
+		if (instance == null)
+		{
+			instance = this;
+			DontDestroyOnLoad(gameObject);
+		}
+		else
+		{
+			Destroy(gameObject);
+		}
+	}
 
 
 	private void Update()

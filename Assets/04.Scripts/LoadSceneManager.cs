@@ -48,7 +48,7 @@ public class LoadSceneManager : MonoBehaviour
 
 	public void ExitTry()
 	{
-		Debug.Log("red2");
+		//Debug.Log("red2");
 		canvas_option.SetActive(true);
 		//option.SetActive(false);
 		//menu.SetActive(false);

@@ -8,6 +8,7 @@ public class ObjectPool : MonoBehaviour
 
 	public GameObject prefab_bullet;
 	public GameObject prefab_explode;
+	public GameObject prefab_gate;
 	
 
 	private void Awake()

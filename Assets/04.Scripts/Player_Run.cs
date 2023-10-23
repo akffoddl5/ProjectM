@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player_Run : PlayerState
@@ -34,6 +35,10 @@ public class Player_Run : PlayerState
 		{
 			Debug.Log("jump ");
 			stateMachine.ChangeState(player.jumpState);
+		}else if (aiming)
+		{
+			//Debug.Log("aim");
+			stateMachine.ChangeState(player.aimState);
 		}
 	}
 
@@ -55,5 +60,9 @@ public class Player_Run : PlayerState
 			//rb.velocity = Vector3.zero;
 			stateMachine.ChangeState(player.idleState);
 		}
+
+		
 	}
+
+	
 }

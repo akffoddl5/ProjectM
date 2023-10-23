@@ -38,7 +38,7 @@ public class PlayerControl : MonoBehaviour
 	
 
 	public float rotationY;
-
+	public float rotationY_aim;
 
 	//움직임
 	public float speed = 5f;
@@ -193,6 +193,13 @@ public class PlayerControl : MonoBehaviour
 		rotationY = euler.y;
 		var roundRotationY = Mathf.RoundToInt(rotationY);
 
+		//Aim캠 화면각 계산
+		var state_aim = aimCam.State;
+		var rotation_aim = state_aim.FinalOrientation;
+		var euler_aim = rotation_aim.eulerAngles;
+		rotationY_aim = euler_aim.y;
+		var roundRotationY_aim = Mathf.RoundToInt(rotationY_aim);
+
 
 		//Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward, Color.blue, 30f);
 		shoot_cool_left -= Time.deltaTime;
@@ -201,6 +208,7 @@ public class PlayerControl : MonoBehaviour
 	}
 
 	public Quaternion FlatRotation => Quaternion.Euler(0, rotationY, 0);
+	public Quaternion FlatRotation_aim => Quaternion.Euler(0, rotationY_aim, 0);
 
 	int a1 = 0;
 	int a2 = 0;

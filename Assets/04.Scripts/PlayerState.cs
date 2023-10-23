@@ -18,6 +18,7 @@ public class PlayerState
 	public Animator anim;
 	public bool canAnim = false;
 	public static Vector3 dir;
+	public static Vector3 dir_aim;
 
 	//≈∏¿Ã∏”
 	public float timer1;
@@ -77,6 +78,8 @@ public class PlayerState
 			aiming_out = false;
 		}
 		dir = player.FlatRotation * new Vector3(get_X, 0, get_Y).normalized;
+		dir_aim = player.FlatRotation_aim * new Vector3(get_X, 0, get_Y).normalized;
+		
 
 		dash_cool -= Time.deltaTime;
 		timer1 -= Time.deltaTime;
