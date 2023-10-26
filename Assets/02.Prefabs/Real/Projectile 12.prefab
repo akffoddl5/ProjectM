@@ -4852,6 +4852,8 @@ MonoBehaviour:
   flash: {fileID: 1883419434696116, guid: 0b0d69410ca2f1045b821e4b992ce9a2, type: 3}
   Detached:
   - {fileID: 8397488255622599895}
+  player_pos: {x: 0, y: 0, z: 0}
+  _dir: {x: 0, y: 0, z: 0}
 --- !u!54 &7464937865917350830
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4962,13 +4964,13 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
-  m_ProvidesContacts: 0
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.07

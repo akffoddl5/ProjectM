@@ -45,6 +45,7 @@ MonoBehaviour:
   tornado: {fileID: 426496798927331430, guid: 1abafa90d6c07e04fae4c4a9e01759b8, type: 3}
   timer1: 0
   timer2: 0
+  bullet_dir: {x: 0, y: 0, z: 0}
 --- !u!1109 &-2236478080116030787
 AnimatorTransition:
   m_ObjectHideFlags: 1

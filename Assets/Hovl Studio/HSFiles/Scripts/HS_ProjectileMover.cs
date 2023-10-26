@@ -15,10 +15,12 @@ public class HS_ProjectileMover : MonoBehaviour
     public Vector3 player_pos;
     public Vector3 _dir;
 
+    public float att;
+
     void Start()
     {
         player_pos = GameObject.FindWithTag("Player").transform.position;
-        _dir = (player_pos - transform.position).normalized;
+        //_dir = (player_pos - transform.position).normalized;
         rb = GetComponent<Rigidbody>();
         if (flash != null)
         {
@@ -52,9 +54,59 @@ public class HS_ProjectileMover : MonoBehaviour
         }
 	}
 
-    //https ://docs.unity3d.com/ScriptReference/Rigidbody.OnCollisionEnter.html
-    void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
+        if (!other.CompareTag("Player")) return;
+        //Lock all axes movement and rotation
+        rb.constraints = RigidbodyConstraints.FreezeAll;
+        speed = 0;
+
+        Vector3 contact = other.ClosestPoint(transform.position);
+
+        other.gameObject.GetComponent<PlayerControl>().Damage(att);
+        Debug.Log(att + " 만큼 뎀지 줌");
+
+        ////ContactPoint contact = collision.contacts[0];
+        //Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
+        //Vector3 pos = contact.point + contact.normal * hitOffset;
+
+        ////Spawn hit effect on collision
+        //if (hit != null)
+        //{
+        //    var hitInstance = Instantiate(hit, pos, rot);
+        //    if (UseFirePointRotation) { hitInstance.transform.rotation = gameObject.transform.rotation * Quaternion.Euler(0, 180f, 0); }
+        //    else if (rotationOffset != Vector3.zero) { hitInstance.transform.rotation = Quaternion.Euler(rotationOffset); }
+        //    else { hitInstance.transform.LookAt(contact.point + contact.normal); }
+
+        //    //Destroy hit effects depending on particle Duration time
+        //    var hitPs = hitInstance.GetComponent<ParticleSystem>();
+        //    if (hitPs != null)
+        //    {
+        //        Destroy(hitInstance, hitPs.main.duration);
+        //    }
+        //    else
+        //    {
+        //        var hitPsParts = hitInstance.transform.GetChild(0).GetComponent<ParticleSystem>();
+        //        Destroy(hitInstance, hitPsParts.main.duration);
+        //    }
+        //}
+
+        ////Removing trail from the projectile on cillision enter or smooth removing. Detached elements must have "AutoDestroying script"
+        //foreach (var detachedPrefab in Detached)
+        //{
+        //    if (detachedPrefab != null)
+        //    {
+        //        detachedPrefab.transform.parent = null;
+        //        Destroy(detachedPrefab, 1);
+        //    }
+        //}
+        Destroy(gameObject);
+    
+}
+
+void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("collision enter");
         //Lock all axes movement and rotation
         rb.constraints = RigidbodyConstraints.FreezeAll;
         speed = 0;

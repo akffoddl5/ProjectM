@@ -34,6 +34,12 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
+	private void Start()
+	{
+		SpawnManager.instance.Spawn(1);
+
+	}
+
 	private void Update()
 	{
 		if (UIManager.instance != null)
@@ -52,7 +58,7 @@ public class GameManager : MonoBehaviour
 
 				//몬스터 38번 소환진이랑 함꼐 스폰 (스크립터블오브젝트로 할까나 말까나)
 				
-				SpawnManager.instance.Spawn(null);
+				SpawnManager.instance.Spawn(1);
 				
 			}
 
@@ -64,9 +70,4 @@ public class GameManager : MonoBehaviour
 
 	}
 
-	private void Start()
-	{
-		
-
-	}
 }

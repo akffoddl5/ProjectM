@@ -705,6 +705,7 @@ MonoBehaviour:
   tornado_obj: {fileID: 0}
   tornado_bullet: {fileID: 3916131228914249282, guid: ef03eb5d4cb57694ab04c6cca94dc761,
     type: 3}
+  att: 30
 --- !u!1 &6468548307565151869 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100066, guid: 3353e4f866c39d043a315b41717c9bb7,

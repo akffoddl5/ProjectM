@@ -12,6 +12,8 @@ public class Mummy : Enemy
     public GameObject tornado_obj;
     public GameObject tornado_bullet;
 
+    public float att;
+
 	void Start()
     {
 		agent = GetComponent<NavMeshAgent>();
@@ -41,16 +43,20 @@ public class Mummy : Enemy
             _time -= Time.deltaTime;
 
             _red_line.SetActive(!_red_line.activeSelf);
-            yield return new WaitForSeconds(0.05f);
+            if (_time <= 0)
+            {
+				attack_done = true;
+			}
+            yield return new WaitForSeconds(0.01f);
         }
         attack_done = true;
 
-		
 	}
 
     public void AttackMotion()
     {
 		tornado_obj = Instantiate(tornado, attack_generator.transform.position, Quaternion.identity);
+        Destroy(tornado_obj, 2.65f);
 		//a.transform.LookAt(player.transform.position);
 		
 
@@ -58,7 +64,7 @@ public class Mummy : Enemy
 		StartCoroutine(MakeBig(tornado_obj));
 	}
 
-    public void Shoot()
+    public void Shoot(Vector3 _dir)
     {
         //Debug.Log("shoot" + player.transform.position + " À¸·Î \n" + (player.transform.position - attack_generator.transform.position));
 
@@ -66,6 +72,9 @@ public class Mummy : Enemy
         //Debug.Log(b);
 
         var a = Instantiate(tornado_bullet, attack_generator.transform.position, Quaternion.identity);
+        a.GetComponent<HS_ProjectileMover>().att = att;
+        a.GetComponent<HS_ProjectileMover>()._dir = _dir;
+
         //a.transform.LookAt(player.transform);
         
     }

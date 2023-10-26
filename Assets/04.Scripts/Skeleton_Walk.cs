@@ -28,7 +28,7 @@ public class Skeleton_Walk : StateMachineBehaviour
         {
             animator.SetBool("Walk", false);
             animator.SetBool("Run", true);
-        } else if (distance < 3f)
+        } else if (distance < 1.5f)
         {
             animator.SetBool("Walk", false);
             animator.SetBool("Attack", true);

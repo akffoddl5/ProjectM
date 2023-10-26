@@ -14,7 +14,9 @@ public class Mummy_Attack : StateMachineBehaviour
 	public GameObject tornado;
 
 	public float timer1;	//timer1 ¸¸Å­ ÂÑ´Ù°¡
-	public float timer2;	//timer2 ¸¸Å­ ±ôºý °Å¸®°í ½î±â
+	public float timer2;    //timer2 ¸¸Å­ ±ôºý °Å¸®°í ½î±â
+
+	public Vector3 bullet_dir;
 	
 
 
@@ -28,8 +30,8 @@ public class Mummy_Attack : StateMachineBehaviour
 		attack_generator = animator.gameObject.GetComponent<Mummy>().attack_generator;
 		
 
-		timer1 = 3f;
-		timer2 = 0.65f;
+		timer1 = 4.0f;
+		timer2 = 0.35f;
 
 		animator.SetBool("Move", false);
 		animator.SetBool("Attack", true);																																								
@@ -69,6 +71,8 @@ public class Mummy_Attack : StateMachineBehaviour
 		}
 		else if(timer2 > 0)
 		{
+			bullet_dir = player.transform.position - attack_generator.transform.position;
+			bullet_dir = bullet_dir.normalized;
 			animator.GetComponent<Mummy>().Cor_Blink(timer2,detect_line);
 			timer2 = -1;
 		}
@@ -76,19 +80,11 @@ public class Mummy_Attack : StateMachineBehaviour
 		if (animator.GetComponent<Mummy>().attack_done)
 		{
 			animator.GetComponent<Mummy>().attack_done = false;
-			animator.GetComponent<Mummy>().Shoot();
+			animator.GetComponent<Mummy>().Shoot(bullet_dir);
 			Destroy(detect_line);
 			
 			animator.SetBool("Move", true);
 			animator.SetBool("Attack", false);
-
-			//animator.GetComponent<Mummy>().tornado_obj.GetComponent<DelayActive>().m_activeObj[1].SetActive(true);
-			//animator.GetComponent<Mummy>().tornado_obj.GetComponent<DelayActive>().m_activeObj[1].transform.LookAt(player.transform.position);
-
-			
-
-			//animator.GetComponent<Mummy>().tornado_obj.GetComponent<DelayActive>().m_activeObj[1].SetActive(true);
-			//animator.GetComponent<Mummy>().tornado_obj.transform.LookAt(player.transform.position);
 
 
 		}

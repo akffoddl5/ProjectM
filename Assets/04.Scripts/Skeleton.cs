@@ -10,7 +10,6 @@ public class Skeleton : Enemy
     {
         
 		agent = GetComponent<NavMeshAgent>();
-		hp_max = 150;
         hp = hp_max;
         hp_text.text = hp_max + "/" + hp_max;
         hp_slider.maxValue = hp_max;

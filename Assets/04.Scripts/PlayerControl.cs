@@ -148,29 +148,6 @@ public class PlayerControl : MonoBehaviour
 			shoot_left = !shoot_left;
 			StartCoroutine(IShoot_Shake());
 		}
-
-		//if (shoot_cool_left < 0)
-		//{
-		//	Quaternion q = Quaternion.Euler(AimDetected() - leftBulletGenerator.position + new Vector3(90,0,0));
-			
-		//	var a = Instantiate(ObjectPool.instance.prefab_bullet, leftBulletGenerator.position, Quaternion.identity);
-		//	shoot_cool_left = shoot_cool_max;
-		//	a.GetComponent<Player_Bullet>().move_dir = AimDetected();
-		//	Debug.Log("¿Þ11");
-		//}
-		//else if (shoot_cool_right < 0 )
-		//{
-		//	Quaternion q = Quaternion.Euler(AimDetected() - rightBulletGenerator.position + new Vector3(90, 0, 0) );
-		//	var a = Instantiate(ObjectPool.instance.prefab_bullet, rightBulletGenerator.position, Quaternion.identity);
-		//	shoot_cool_right = shoot_cool_max;
-		//	a.GetComponent<Player_Bullet>().move_dir = AimDetected();
-		//	Debug.Log("¿ì22");
-		//}
-		
-		
-
-
-
 	}
 
 
@@ -258,5 +235,19 @@ public class PlayerControl : MonoBehaviour
 
 		//Gizmos.DrawLine(leftBulletGenerator.position, AimDetected()); 
 		//ray = new Ray(firePos.position, dir);
+	}
+
+	public void Damage(float _damage)
+	{
+		hp -= _damage;
+		if (hp < 0)
+		{
+			Die();
+		}
+	}
+
+	public void Die()
+	{
+		Debug.Log("Die..");
 	}
 }

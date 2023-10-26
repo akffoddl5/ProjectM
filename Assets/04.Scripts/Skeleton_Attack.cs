@@ -24,7 +24,7 @@ public class Skeleton_Attack : StateMachineBehaviour
 
 		float distance = Vector3.Distance(player.position, animator.transform.position);
 
-		if (distance > 3f)
+		if (distance > 1.5f)
 		{
 			animator.SetBool("Run", true);
 			animator.SetBool("Attack", false);
