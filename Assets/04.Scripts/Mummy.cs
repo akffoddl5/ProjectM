@@ -80,6 +80,7 @@ public class Mummy : Enemy
     }
 
     IEnumerator MakeBig(GameObject a) {
+        if (a == null) yield break;
         while (a.transform.localScale.x < 0.4f)
         {
             a.transform.localScale += new Vector3(0.003f, 0.003f, 0.003f);
@@ -87,8 +88,6 @@ public class Mummy : Enemy
             //yield return new WaitForSeconds(0.1f);
             yield return null;
 		}
-
-        
     }
 
 	public override void Die()

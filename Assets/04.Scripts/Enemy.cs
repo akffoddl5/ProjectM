@@ -14,6 +14,8 @@ public class Enemy : MonoBehaviour
     public Animator anim;
     public GameObject player;
 
+	public GameObject have_item;
+
 	private void Awake()
 	{
 		player = GameObject.FindGameObjectWithTag("Player");

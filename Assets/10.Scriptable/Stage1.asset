@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy_list:
   - {fileID: 7784818721531726808, guid: 43894d38214b07d46be46c34bc219e19, type: 3}
-  - {fileID: 7784818721531726808, guid: 43894d38214b07d46be46c34bc219e19, type: 3}
-  - {fileID: 7784818721531726808, guid: 43894d38214b07d46be46c34bc219e19, type: 3}
+  - {fileID: 7784818721531726808, guid: f50e05998d2954d4cb06edafc204e68f, type: 3}
+  - {fileID: 7784818721531726808, guid: 3eefcc108e2689447bf1e6e25d86f0e6, type: 3}
   - {fileID: 7784818721531726808, guid: 43894d38214b07d46be46c34bc219e19, type: 3}
   - {fileID: 6468548307565151865, guid: 96193f44e39bfb74fba9a16a3d51802c, type: 3}

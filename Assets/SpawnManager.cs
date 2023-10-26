@@ -26,7 +26,6 @@ public class SpawnManager : MonoBehaviour
 
 	public void Spawn(int _st)
 	{
-		return;
 		Stage _stage = stages[_st];
 		int spawn_size = spawns.Length;
 		Debug.Log(_stage + " " );
@@ -47,9 +46,15 @@ public class SpawnManager : MonoBehaviour
 		foreach (var a in real_spawn)
 		{
 			idx++;
-			Instantiate(_stage.enemy_list[idx], spawns[a].position, Quaternion.identity);
+			var obj =Instantiate(_stage.enemy_list[a], spawns[a].position, Quaternion.identity);
 			Instantiate(ObjectPool.instance.prefab_gate, spawns[a].position, Quaternion.identity);
-			
+			if (idx == 0)
+			{
+				
+				int item_num = ObjectPool.instance.item_dic.Keys.Count;
+				int rand = Random.Range(0, item_num - 1);
+				obj.GetComponent<Enemy>().have_item = ObjectPool.instance.item_dic[(ITEM)rand];
+			}
 		}
 		
 	}

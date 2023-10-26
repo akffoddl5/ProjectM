@@ -3,12 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public enum ITEM
-{
-    WING_ANGEL,
-    WING_DEMON,
 
-}
 
 public class Player_Item : MonoBehaviour
 {
