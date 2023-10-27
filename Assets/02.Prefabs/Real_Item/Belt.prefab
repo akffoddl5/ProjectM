@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 665091198093754635}
   - component: {fileID: 8851931043516204702}
   - component: {fileID: 3452798481623750467}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Buckle_Ring_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7568524361655864845}
   - component: {fileID: 3733118419769618678}
-  m_Layer: 7
+  - component: {fileID: -4040602883508764207}
+  - component: {fileID: 3198237678293050109}
+  m_Layer: 0
   m_Name: Belt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,6 +143,39 @@ LODGroup:
     renderers:
     - renderer: {fileID: 4682882845038589466}
   m_Enabled: 1
+--- !u!114 &-4040602883508764207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 689919323448446732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66222c6ede237b549a22b71af6a10008, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &3198237678293050109
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 689919323448446732}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1367493956063767841
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,7 +186,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7633867447965349140}
   - component: {fileID: 4204774913975860046}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Buckle_Ring
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -210,7 +245,7 @@ GameObject:
   - component: {fileID: 6204590708499139694}
   - component: {fileID: 3751201003172743318}
   - component: {fileID: 339005492383345654}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: StrapEnd_CurvedShort_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -292,7 +327,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3246436960215769578}
   - component: {fileID: 2995009470873539303}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: StrapEnd_CurvedShort (Assembled)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -354,7 +389,7 @@ GameObject:
   - component: {fileID: 7267007942571964772}
   - component: {fileID: 2757443948430663321}
   - component: {fileID: 8249148317221089538}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Buckle_Square_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -437,7 +472,7 @@ GameObject:
   - component: {fileID: 7317279591105721434}
   - component: {fileID: 4297664621487994554}
   - component: {fileID: 260700101490714065}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: BuckleNail_Square_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -519,7 +554,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3932837905178625777}
   - component: {fileID: 2786276576472095875}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Buckle_Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -578,7 +613,7 @@ GameObject:
   - component: {fileID: 4704344520367908755}
   - component: {fileID: 6310833840995317673}
   - component: {fileID: 4163748838981044759}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: BuckleNail_Ring_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -661,7 +696,7 @@ GameObject:
   - component: {fileID: 5993330541008752268}
   - component: {fileID: 8240814750630267004}
   - component: {fileID: 2933017284898322394}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: FullStrap_Small_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -744,7 +779,7 @@ GameObject:
   - component: {fileID: 811852074904762476}
   - component: {fileID: 9198815396048257881}
   - component: {fileID: 3030255166764966897}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: StrapEnd_CurvedShort_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -827,7 +862,7 @@ GameObject:
   - component: {fileID: 942725986467465341}
   - component: {fileID: 6168198043637923196}
   - component: {fileID: 801556841667869965}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: StrapTail_Full_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -910,7 +945,7 @@ GameObject:
   - component: {fileID: 6854321487090803029}
   - component: {fileID: 7882311802566110064}
   - component: {fileID: 6656630930098949376}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: BuckleNail_Ring_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -993,7 +1028,7 @@ GameObject:
   - component: {fileID: 4722799960401261294}
   - component: {fileID: 5052541393435302723}
   - component: {fileID: 3403062488616282374}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: StrapTail_Open_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1075,7 +1110,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9025505034808315506}
   - component: {fileID: 3269594844129100070}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: StrapTail_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1134,7 +1169,7 @@ GameObject:
   - component: {fileID: 8922652440573328993}
   - component: {fileID: 2176474557656186600}
   - component: {fileID: 4753602592315099191}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Buckle_Ring_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1217,7 +1252,7 @@ GameObject:
   - component: {fileID: 7921327129414704357}
   - component: {fileID: 6401530241468891298}
   - component: {fileID: 7022954998643469859}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: StrapTail_Full_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1300,7 +1335,7 @@ GameObject:
   - component: {fileID: 2611651383594575868}
   - component: {fileID: 25254580270311959}
   - component: {fileID: 8829230112792433321}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Buckle_Square_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1382,7 +1417,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6521973507821046291}
   - component: {fileID: 2255831862461696174}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: StrapTail_Full
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1440,7 +1475,7 @@ GameObject:
   - component: {fileID: 3058492646243372904}
   - component: {fileID: 5486719258031173748}
   - component: {fileID: 4682882845038589466}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: FullStrap_Small_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1522,7 +1557,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1812984855978873719}
   - component: {fileID: 3845447368682184567}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: BuckleNail_Ring
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1579,7 +1614,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3697994288654700399}
   - component: {fileID: 7297496289295484577}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: BuckleNail_Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1637,7 +1672,7 @@ GameObject:
   - component: {fileID: 8335209403979809475}
   - component: {fileID: 5740991789716645935}
   - component: {fileID: 838581739821844043}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: BuckleNail_Square_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1720,7 +1755,7 @@ GameObject:
   - component: {fileID: 6663010991378965800}
   - component: {fileID: 5266319437659218881}
   - component: {fileID: 4131414738016459319}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: StrapTail_Open_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}

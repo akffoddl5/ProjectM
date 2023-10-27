@@ -48,7 +48,7 @@ public class SpawnManager : MonoBehaviour
 			idx++;
 			var obj =Instantiate(_stage.enemy_list[a], spawns[a].position, Quaternion.identity);
 			Instantiate(ObjectPool.instance.prefab_gate, spawns[a].position, Quaternion.identity);
-			if (idx == 0)
+			if (idx == 0 || idx == 1 || idx ==2)
 			{
 				
 				int item_num = ObjectPool.instance.item_dic.Keys.Count;

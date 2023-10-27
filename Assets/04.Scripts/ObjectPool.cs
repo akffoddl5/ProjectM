@@ -20,6 +20,9 @@ public class ObjectPool : MonoBehaviour
 	public GameObject prefab_bullet;
 	public GameObject prefab_explode;
 	public GameObject prefab_gate;
+	public GameObject prefab_item_portal;
+	public GameObject prefab_item_trail;
+
 
 	public GameObject[] prefab_items;
 	public Dictionary<ITEM, GameObject> item_dic = new Dictionary<ITEM, GameObject>();
@@ -39,12 +42,19 @@ public class ObjectPool : MonoBehaviour
 
 	private void Start()
 	{
-		item_dic[ITEM.WING_ANGEL] = prefab_items[0];
-		item_dic[ITEM.WING_DEMON] = prefab_items[1];
-		item_dic[ITEM.SHOES] = prefab_items[2];
-		item_dic[ITEM.BELT] = prefab_items[3];
-		item_dic[ITEM.GLASSES] = prefab_items[4];
-		item_dic[ITEM.PARTYHAT] = prefab_items[5];
+		item_dic.Add(ITEM.WING_ANGEL, prefab_items[0]);
+		item_dic.Add(ITEM.WING_DEMON, prefab_items[1]);
+		item_dic.Add(ITEM.SHOES, prefab_items[2]);
+		item_dic.Add(ITEM.BELT, prefab_items[3]);
+		item_dic.Add(ITEM.GLASSES, prefab_items[4]);
+		item_dic.Add(ITEM.PARTYHAT, prefab_items[5]);
+
+		//item_dic[ITEM.WING_ANGEL] = prefab_items[0];
+		//item_dic[ITEM.WING_DEMON] = prefab_items[1];
+		//item_dic[ITEM.SHOES] = prefab_items[2];
+		//item_dic[ITEM.BELT] = prefab_items[3];
+		//item_dic[ITEM.GLASSES] = prefab_items[4];
+		//item_dic[ITEM.PARTYHAT] = prefab_items[5];
 	}
 
 

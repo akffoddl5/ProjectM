@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6639800450691672881}
   - component: {fileID: 4684484287069079312}
   - component: {fileID: 5192474995161163628}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Shoe_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 2918298953116515573}
   - component: {fileID: 5653993931044205466}
   - component: {fileID: 8771142558104588473}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Shoe_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,6 +175,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4347158437391523869}
+  - component: {fileID: -7434305071086174834}
+  - component: {fileID: 8662015697025040507}
   m_Layer: 0
   m_Name: Shoes
   m_TagString: Untagged
@@ -199,3 +201,36 @@ Transform:
   - {fileID: 6639800450691672881}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-7434305071086174834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8499274973815097046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66222c6ede237b549a22b71af6a10008, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &8662015697025040507
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8499274973815097046}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 0.6983032, z: 1.1148643}
+  m_Center: {x: 0, y: 0.22291183, z: 0.21138573}

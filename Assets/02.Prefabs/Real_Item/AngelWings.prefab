@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8572274619958411851}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: AngelWIngs_Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4901453529563885837}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: WingBase.r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7464823629184403064}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: WingBase.l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6311034983503233882}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: WingEnd.l_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +136,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3666114515523374647}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5279346178327119734}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: WingMid.l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,7 +201,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1841404542390564188}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: WingEnd.l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -233,7 +233,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 122978372745720341}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: WingEnd.r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -267,7 +267,9 @@ GameObject:
   - component: {fileID: 2256680843741821120}
   - component: {fileID: 4758876813045160319}
   - component: {fileID: 7356844576456264146}
-  m_Layer: 7
+  - component: {fileID: -7304816965523512856}
+  - component: {fileID: 4517264125908226614}
+  m_Layer: 0
   m_Name: AngelWings
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -324,6 +326,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f12d6ab10bc97a44b1c391cbc2de603, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-7304816965523512856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5420909579780415968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66222c6ede237b549a22b71af6a10008, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &4517264125908226614
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5420909579780415968}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.4922855, y: 2.6293318, z: 1.5765663}
+  m_Center: {x: -0.11226933, y: 2.2893705, z: -0.77657616}
 --- !u!1 &5940900671575546285
 GameObject:
   m_ObjectHideFlags: 0
@@ -333,7 +368,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1833154047106703877}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: WingEnd.r_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -365,7 +400,7 @@ GameObject:
   m_Component:
   - component: {fileID: 852497905522591525}
   - component: {fileID: 3263657782581254694}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Angel Wings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -456,7 +491,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8880476608415394079}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: WingMid.r
   m_TagString: Untagged
   m_Icon: {fileID: 0}

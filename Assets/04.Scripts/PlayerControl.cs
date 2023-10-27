@@ -154,14 +154,20 @@ public class PlayerControl : MonoBehaviour
 
 	void Start()
     {
-		Cursor.visible = false;
-		Cursor.lockState = CursorLockMode.Locked;
 		stateMachine.cur_state.Enter();
 	}
 
-    void Update()
+	void Update()
     {
 		stateMachine.cur_state.Update();
+
+		if (Input.GetKeyDown(KeyCode.LeftAlt))
+		{
+			Cursor.visible = !Cursor.visible;
+			
+			Cursor.lockState =  (CursorLockMode)((int)Cursor.lockState  ^ 1);
+			Debug.Log(Cursor.lockState + "  << locked state");
+		}
 
 		//화면각 계산
 		var state = vcam.State;

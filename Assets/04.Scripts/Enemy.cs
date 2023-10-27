@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour
     public GameObject player;
 
 	public GameObject have_item;
+	bool isDie = false;
 
 	private void Awake()
 	{
@@ -46,8 +47,19 @@ public class Enemy : MonoBehaviour
 	}
 
     public virtual void Die() {
+		if (isDie) return;
 		agent.speed = 0f;
 		anim.SetBool("Die", true);
 		Destroy(gameObject, 1.5f);
+
+		GetComponent<Collider>().enabled = false;
+
+		if (have_item != null)
+		{
+			Debug.Log("item 스폰해야함1" + have_item.name);
+			Instantiate(have_item, transform.position + new Vector3(0,1,0), Quaternion.identity);
+			Instantiate(ObjectPool.instance.prefab_item_portal, transform.position, Quaternion.identity);
+		}
+		isDie = true;
 	}
 }

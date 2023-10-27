@@ -6,8 +6,12 @@ public class EnemyHP : MonoBehaviour
 {
     public Transform cam;
 
-	
-		
+	private void Start()
+	{
+		cam = Camera.main.transform;
+	}
+
+
 	void Update()
     {
         transform.LookAt(cam);
