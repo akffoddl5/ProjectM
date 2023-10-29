@@ -15,6 +15,10 @@ public class GameManager : MonoBehaviour
 	public int current_round;
 	public float round_time = 30;
 
+	public int current_item_num = 0;
+	public HashSet<ITEM> current_item = new HashSet<ITEM>();
+
+
 
 	//타임라인
 	public PlayableDirector stage_show;

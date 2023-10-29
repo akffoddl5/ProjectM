@@ -53,7 +53,7 @@ public class Player_Aim : PlayerState
 		base.FixedUpdate();
 		if (get_X != 0 || get_Y != 0)
 		{
-			Debug.Log(dir_aim + " in aim");
+			//Debug.Log(dir_aim + " in aim");
 			Quaternion requireRotation = Quaternion.LookRotation(dir_aim);
 			player.transform.rotation = requireRotation;
 

@@ -11,6 +11,8 @@ public class Item : MonoBehaviour
 
 	public GameObject star;
 
+	public ITEM item_type;
+
 	
 
 	private void Start()
@@ -41,7 +43,7 @@ public class Item : MonoBehaviour
 		get_complete = true;
 		rotate_speed = 25f;
 
-		Vector3 des_point = new Vector3(-450,0,0);
+		Vector3 des_point = new Vector3(-600,0,0);
 
 		transform.parent = canvas_ui.transform;
 		//RectTransform rt = 
@@ -69,16 +71,26 @@ public class Item : MonoBehaviour
 			yield return null;
 		}
 
-		
+		if (GameManager.instance.current_item.Contains(item_type))
+		{
+			yield break;
+		}
+		else
+		{
+			des_point = new Vector3(-833 + GameManager.instance.current_item.Count * 150, -384, 0);
+			GameManager.instance.current_item.Add(item_type);
+		}
 
 		var a = Instantiate(ObjectPool.instance.prefab_item_trail_in_canvas, des_point, Quaternion.identity);
 		a.transform.parent = canvas_ui.transform;
-		a.transform.localPosition = new Vector3(-500, 0, 0);
-
+		a.transform.localPosition = new Vector3(-600,0,0);
+		a.transform.localScale *= 0.001f;
+		yield return new WaitForSeconds(1.5f);
 		while (Vector3.Distance(a.transform.localPosition, new Vector3(-500, -500, 0) ) > 1)
 		{
+			
 			Debug.Log("flag1");
-			a.transform.localPosition = Vector3.Lerp(a.transform.localPosition, new Vector3(-500,-500,0), 0.2f);
+			a.transform.localPosition = Vector3.Lerp(a.transform.localPosition, des_point, 0.1f);
 			yield return null;
 		}
 			Debug.Log("flag2");

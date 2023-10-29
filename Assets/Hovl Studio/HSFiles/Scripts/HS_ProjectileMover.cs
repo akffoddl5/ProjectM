@@ -64,7 +64,7 @@ public class HS_ProjectileMover : MonoBehaviour
         Vector3 contact = other.ClosestPoint(transform.position);
 
         other.gameObject.GetComponent<PlayerControl>().Damage(att);
-        Debug.Log(att + " 만큼 뎀지 줌");
+        //Debug.Log(att + " 만큼 뎀지 줌");
 
         ////ContactPoint contact = collision.contacts[0];
         //Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);

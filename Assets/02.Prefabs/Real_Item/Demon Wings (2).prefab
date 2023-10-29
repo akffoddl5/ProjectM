@@ -957,6 +957,8 @@ MonoBehaviour:
   canvas_ui: {fileID: 0}
   canvas_cam: {fileID: 0}
   rotate_speed: 2.5
+  star: {fileID: 0}
+  item_type: 1
 --- !u!1 &5678343533962335176
 GameObject:
   m_ObjectHideFlags: 0
