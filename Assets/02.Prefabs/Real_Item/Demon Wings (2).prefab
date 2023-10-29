@@ -318,7 +318,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8583650907971182029}
+  m_Father: {fileID: 1743514645031092316}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &1700499873103316352
 SkinnedMeshRenderer:
@@ -896,9 +896,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8583650907971182029}
-  - component: {fileID: 8528548239391737254}
-  - component: {fileID: -2558986194825028178}
   - component: {fileID: -6670749682366253736}
+  - component: {fileID: -2558986194825028178}
   m_Layer: 0
   m_Name: Demon Wings (2)
   m_TagString: Item
@@ -914,48 +913,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5268751154636669742}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0042586, y: 0, z: 0, w: 0.99999094}
-  m_LocalPosition: {x: 0, y: -0.0483, z: 0.004}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
-  m_ConstrainProportionsScale: 1
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 76.59644, y: 21.566746, z: 35.455513}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5308816016240496620}
-  - {fileID: 5712217232501806243}
+  - {fileID: 1743514645031092316}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0.488, y: 0, z: 0}
---- !u!95 &8528548239391737254
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5268751154636669742}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: f1187f2c2b11e2643b873ff5f150283b, type: 3}
-  m_Controller: {fileID: 9100000, guid: 335e322ad48dc86428149de962061c39, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!114 &-2558986194825028178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5268751154636669742}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66222c6ede237b549a22b71af6a10008, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &-6670749682366253736
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -975,8 +940,23 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 4.103836, y: 2.4866347, z: 1.5132587}
-  m_Center: {x: -0.0014960021, y: 2.5461516, z: -0.1826269}
+  m_Size: {x: 1.5679855, y: 0.7981949, z: 0.552845}
+  m_Center: {x: 0.010456085, y: 0.9549084, z: -0.07335091}
+--- !u!114 &-2558986194825028178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5268751154636669742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66222c6ede237b549a22b71af6a10008, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas_ui: {fileID: 0}
+  canvas_cam: {fileID: 0}
+  rotate_speed: 2.5
 --- !u!1 &5678343533962335176
 GameObject:
   m_ObjectHideFlags: 0
@@ -1071,7 +1051,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8096134177019607559}
-  m_Father: {fileID: 8583650907971182029}
+  m_Father: {fileID: 1743514645031092316}
   m_LocalEulerAnglesHint: {x: -89.98021, y: 0, z: 0}
 --- !u!1 &5925088091060859682
 GameObject:
@@ -1462,6 +1442,61 @@ Transform:
   - {fileID: 1416131375765174024}
   m_Father: {fileID: 3738192686696839232}
   m_LocalEulerAnglesHint: {x: 0.000052867053, y: -0.000046883608, z: -0.000022763512}
+--- !u!1 &8931426080942658725
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1743514645031092316}
+  - component: {fileID: 7511937124291143837}
+  m_Layer: 0
+  m_Name: Demon Wings (2)
+  m_TagString: Item
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1743514645031092316
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8931426080942658725}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0042586, y: -0, z: -0, w: 0.99999094}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.40000007, z: 0.40000007}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 5308816016240496620}
+  - {fileID: 5712217232501806243}
+  m_Father: {fileID: 8583650907971182029}
+  m_LocalEulerAnglesHint: {x: 0.488, y: 0, z: 0}
+--- !u!95 &7511937124291143837
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8931426080942658725}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: f1187f2c2b11e2643b873ff5f150283b, type: 3}
+  m_Controller: {fileID: 9100000, guid: 335e322ad48dc86428149de962061c39, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &9050756662806354276
 GameObject:
   m_ObjectHideFlags: 0

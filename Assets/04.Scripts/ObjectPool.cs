@@ -22,6 +22,7 @@ public class ObjectPool : MonoBehaviour
 	public GameObject prefab_gate;
 	public GameObject prefab_item_portal;
 	public GameObject prefab_item_trail;
+	public GameObject prefab_item_trail_in_canvas;
 
 
 	public GameObject[] prefab_items;

@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 8662015697025040507}
   m_Layer: 0
   m_Name: Shoes
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -213,6 +213,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66222c6ede237b549a22b71af6a10008, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas_ui: {fileID: 0}
+  canvas_cam: {fileID: 0}
+  rotate_speed: 2.5
 --- !u!65 &8662015697025040507
 BoxCollider:
   m_ObjectHideFlags: 0

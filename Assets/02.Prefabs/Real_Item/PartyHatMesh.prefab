@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2691506108444506541
+--- !u!1 &1840793038343470736
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,11 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2227366000927226727}
-  - component: {fileID: 5951154324936345917}
-  - component: {fileID: 2517120408574675733}
-  - component: {fileID: 896549343355871993}
-  - component: {fileID: 744334418389528409}
+  - component: {fileID: 6738926339942599596}
+  - component: {fileID: 359552954120274032}
+  - component: {fileID: 5365279356212801516}
   m_Layer: 0
   m_Name: PartyHatMesh
   m_TagString: Item
@@ -20,36 +18,36 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2227366000927226727
+--- !u!4 &6738926339942599596
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2691506108444506541}
+  m_GameObject: {fileID: 1840793038343470736}
   serializedVersion: 2
   m_LocalRotation: {x: -0.71458024, y: 0.0039010944, z: -0.004123256, w: 0.69953054}
-  m_LocalPosition: {x: 0, y: 0.0392, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2227366000927226727}
   m_LocalEulerAnglesHint: {x: -91.382, y: -28.075012, z: 28.057007}
---- !u!33 &5951154324936345917
+--- !u!33 &359552954120274032
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2691506108444506541}
+  m_GameObject: {fileID: 1840793038343470736}
   m_Mesh: {fileID: 4300000, guid: 34a2d77e69c9248c09fea2bd77090468, type: 3}
---- !u!23 &2517120408574675733
+--- !u!23 &5365279356212801516
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2691506108444506541}
+  m_GameObject: {fileID: 1840793038343470736}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -85,18 +83,40 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &896549343355871993
-MonoBehaviour:
+--- !u!1 &2691506108444506541
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2227366000927226727}
+  - component: {fileID: 744334418389528409}
+  - component: {fileID: 896549343355871993}
+  m_Layer: 0
+  m_Name: PartyHatMesh
+  m_TagString: Item
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2227366000927226727
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2691506108444506541}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66222c6ede237b549a22b71af6a10008, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 80.38624, y: 22.324, z: 39.838947}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6738926339942599596}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &744334418389528409
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -116,5 +136,20 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.4, y: 0.4000001, z: 0.4505965}
-  m_Center: {x: -1.983342e-11, y: -2.3560814e-10, z: 0.025298234}
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &896549343355871993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2691506108444506541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66222c6ede237b549a22b71af6a10008, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas_ui: {fileID: 0}
+  canvas_cam: {fileID: 0}
+  rotate_speed: 2.5

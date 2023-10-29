@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3666114515523374647}
-  m_Father: {fileID: 2256680843741821120}
+  m_Father: {fileID: 5394628217846989349}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &296103294827943808
 GameObject:
@@ -160,6 +160,74 @@ Transform:
   - {fileID: 4901453529563885837}
   m_Father: {fileID: 8572274619958411851}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2559659565595155406
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5394628217846989349}
+  - component: {fileID: 3674051413127693169}
+  - component: {fileID: 8289451083311005497}
+  m_Layer: 0
+  m_Name: AngelWings
+  m_TagString: Item
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5394628217846989349
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2559659565595155406}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0042586, y: -0, z: -0, w: 0.99999094}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.39, y: 0.39000002, z: 0.39000002}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 852497905522591525}
+  - {fileID: 8572274619958411851}
+  m_Father: {fileID: 2256680843741821120}
+  m_LocalEulerAnglesHint: {x: 0.488, y: 0, z: 0}
+--- !u!95 &3674051413127693169
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2559659565595155406}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 9ddf612a3b498a2459dc25775e8fb721, type: 3}
+  m_Controller: {fileID: 9100000, guid: fb47994b090e09c49ad0740b5ecc8eff, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8289451083311005497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2559659565595155406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f12d6ab10bc97a44b1c391cbc2de603, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3119531490912024949
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,10 +333,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2256680843741821120}
-  - component: {fileID: 4758876813045160319}
-  - component: {fileID: 7356844576456264146}
-  - component: {fileID: -7304816965523512856}
   - component: {fileID: 4517264125908226614}
+  - component: {fileID: -7304816965523512856}
   m_Layer: 0
   m_Name: AngelWings
   m_TagString: Item
@@ -284,60 +350,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5420909579780415968}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0042586, y: 0, z: 0, w: 0.99999094}
-  m_LocalPosition: {x: -0, y: -0.0262, z: -0.0041}
-  m_LocalScale: {x: 0.39, y: 0.39, z: 0.39}
-  m_ConstrainProportionsScale: 1
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 75.718285, y: 23.287, z: 38.818775}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 852497905522591525}
-  - {fileID: 8572274619958411851}
+  - {fileID: 5394628217846989349}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0.488, y: 0, z: 0}
---- !u!95 &4758876813045160319
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5420909579780415968}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 9ddf612a3b498a2459dc25775e8fb721, type: 3}
-  m_Controller: {fileID: 9100000, guid: fb47994b090e09c49ad0740b5ecc8eff, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!114 &7356844576456264146
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5420909579780415968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f12d6ab10bc97a44b1c391cbc2de603, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &-7304816965523512856
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5420909579780415968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66222c6ede237b549a22b71af6a10008, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &4517264125908226614
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -357,8 +377,23 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.4922855, y: 2.6293318, z: 1.5765663}
-  m_Center: {x: -0.11226933, y: 2.2893705, z: -0.77657616}
+  m_Size: {x: 1.2848282, y: 0.99469376, z: 0.598629}
+  m_Center: {x: 0.023036957, y: 0.8604946, z: -0.36481667}
+--- !u!114 &-7304816965523512856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5420909579780415968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66222c6ede237b549a22b71af6a10008, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas_ui: {fileID: 0}
+  canvas_cam: {fileID: 0}
+  rotate_speed: 2.5
 --- !u!1 &5940900671575546285
 GameObject:
   m_ObjectHideFlags: 0
@@ -420,7 +455,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2256680843741821120}
+  m_Father: {fileID: 5394628217846989349}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &3263657782581254694
 SkinnedMeshRenderer:
