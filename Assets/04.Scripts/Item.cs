@@ -62,7 +62,6 @@ public class Item : MonoBehaviour
 		{
 			//transform.localPosition += new Vector3(0, 12f, 0);
 			transform.localScale -= new Vector3(15f, 15f, 15f);
-			
 			//transform.position += new Vector3(0, 0.01f, 0);//
 			//Vector3 cur_point = Camera.main.WorldToScreenPoint(transform.position);
 			transform.localPosition = Vector3.Lerp(transform.localPosition, des_point , 0.2f);
@@ -89,11 +88,11 @@ public class Item : MonoBehaviour
 		while (Vector3.Distance(a.transform.localPosition, new Vector3(-500, -500, 0) ) > 1)
 		{
 			
-			Debug.Log("flag1");
 			a.transform.localPosition = Vector3.Lerp(a.transform.localPosition, des_point, 0.1f);
-			yield return null;
+			yield return null;//
 		}
-			Debug.Log("flag2");
+
+		Destroy(a);
 		
 
 		Debug.Log("별 생성하면서 그쪽으로 들어가게");

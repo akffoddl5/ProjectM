@@ -14594,6 +14594,13 @@ MonoBehaviour:
   - {fileID: 689919323448446732, guid: 42b8eebd0c2846f4a92304e57ea8e6df, type: 3}
   - {fileID: 8755291418432091804, guid: ae3ebf1b314cc784aaf38669e5b3b100, type: 3}
   - {fileID: 2691506108444506541, guid: 109d0d2e75f1a844e9b9d3e2fb45cc69, type: 3}
+  item_images:
+  - {fileID: 21300000, guid: 08732164f70d6e946b5043a475212471, type: 3}
+  - {fileID: 21300000, guid: a55072b7e00978b41b327ad544caa419, type: 3}
+  - {fileID: 21300000, guid: 1dac3fb6ac68d1a4caed2209509688a4, type: 3}
+  - {fileID: 21300000, guid: 9f3e92767f9af914fa3827f1b16ecf63, type: 3}
+  - {fileID: 21300000, guid: 5278f3439f8365743857e388b5023496, type: 3}
+  - {fileID: 21300000, guid: 3083b2559d9265f4bb5554d62bd7fab5, type: 3}
 --- !u!4 &851463333
 Transform:
   m_ObjectHideFlags: 0
@@ -28543,7 +28550,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00390625, y: 0.001373291}
+  m_AnchoredPosition: {x: -0.00390625, y: -0.0004348755}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1614840029
