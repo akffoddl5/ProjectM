@@ -68,6 +68,7 @@ public class Mummy_Attack : StateMachineBehaviour
 				detect_line = Instantiate(red_line, attack_generator.transform.position, Quaternion.identity);
 			detect_line.GetComponent<LineRenderer>().SetPosition(0, attack_generator.transform.position);
 			detect_line.GetComponent<LineRenderer>().SetPosition(1, player.transform.position + new Vector3(0,0.7f,0));
+			
 		}
 		else if(timer2 > 0)
 		{
@@ -96,6 +97,8 @@ public class Mummy_Attack : StateMachineBehaviour
 	override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
 		animator.GetComponent<Mummy>().attack_done = false;
+		Destroy(detect_line);
+		Debug.Log("MUMMY EXIT!!!!");
 	}
 
 	// OnStateMove is called right after Animator.OnAnimatorMove()

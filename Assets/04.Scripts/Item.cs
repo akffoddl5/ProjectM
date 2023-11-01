@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Item : MonoBehaviour
 {
@@ -8,10 +9,12 @@ public class Item : MonoBehaviour
 	public Canvas canvas_ui;
 	public Camera canvas_cam;
 	public float rotate_speed = 2.5f;
-
 	public GameObject star;
-
 	public ITEM item_type;
+
+	public GameObject item_scrollView_content;
+
+	public Player_Item player_item;
 
 	
 
@@ -19,7 +22,9 @@ public class Item : MonoBehaviour
 	{
 		transform.localScale *= 1.9f;
 		canvas_ui = GameObject.Find("Canvas_UI").GetComponent<Canvas>();
-		
+		item_scrollView_content = GameObject.Find("Item_Content");
+		player_item = GameObject.Find("Player").GetComponent<Player_Item>();
+
 	}
 
 	//평소에 돌게
@@ -85,17 +90,30 @@ public class Item : MonoBehaviour
 		a.transform.localPosition = new Vector3(-600,0,0);
 		a.transform.localScale *= 0.001f;
 		yield return new WaitForSeconds(1.5f);
-		while (Vector3.Distance(a.transform.localPosition, new Vector3(-500, -500, 0) ) > 1)
+		while (Vector3.Distance(a.transform.localPosition, des_point) > 10)
 		{
-			
+			//Debug.Log("red" + Vector3.Distance(a.transform.localPosition, des_point));
+
 			a.transform.localPosition = Vector3.Lerp(a.transform.localPosition, des_point, 0.1f);
-			yield return null;//
+			yield return null;
 		}
 
 		Destroy(a);
-		
+		Sprite item_image = ObjectPool.instance.item_dic_image[item_type];
+		var _button = Instantiate(ObjectPool.instance.prefab_item_button);
+		_button.transform.parent = item_scrollView_content.transform;
+		_button.transform.localPosition = Vector3.zero;
+		_button.GetComponent<Image>().sprite = item_image;
+		_button.transform.localScale = Vector3.one;
+		_button.transform.localRotation = Quaternion.identity;
 
-		Debug.Log("별 생성하면서 그쪽으로 들어가게");
+
+		//item visual
+		player_item.Visual_Item(item_type);
+
+
+
+
 
 	}
 

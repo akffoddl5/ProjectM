@@ -38,6 +38,7 @@ public class Mummy : Enemy
 
     IEnumerator IRed_line_blink(float _time, GameObject _red_line)
     {
+        if (_red_line == null) yield break;
         while (_time > 0)
         {
             _time -= Time.deltaTime;
