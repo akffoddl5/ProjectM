@@ -111,8 +111,16 @@ public class Item : MonoBehaviour
 		//item visual
 		player_item.Visual_Item(item_type);
 
+		//치명타 확률 증가
+		if (item_type == ITEM.GLASSES)
+		{
 
+		}
+		//공격력 증가
+		else if (item_type == ITEM.BELT)
+		{
 
+		}
 
 
 	}

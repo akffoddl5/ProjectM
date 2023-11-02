@@ -9,6 +9,7 @@ public class Item_Button : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 {
 	public string item_description = "?";
 	public Text item_text;
+	public Sprite item_img;
 
 	public void OnPointerEnter(PointerEventData eventData)
 	{
