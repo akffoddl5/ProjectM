@@ -17,6 +17,8 @@ public class Player_Bullet : MonoBehaviour
 	public GameObject flash;
 	public GameObject[] Detached;
 
+	public float critical_damage = 1;
+
 	private void Start()
 	{
 		rb = GetComponent<Rigidbody>();
@@ -98,15 +100,24 @@ public class Player_Bullet : MonoBehaviour
 		}
 
 
+		if (Random.Range(1, 100) <= GameManager.instance.critical_per)
+		{
+			critical_damage = 1.5f;
+		}
+		else
+		{
+			critical_damage = 1;
+		}
+
 		if (collision.gameObject.CompareTag("Enemy"))
 		{
 			//Debug.Log("enemy ´Â ¸Â¾Æ2" + collision.gameObject.name);
 
-			collision.gameObject.GetComponent<Enemy>().Damage(damage * GameManager.instance.player_att);
+			collision.gameObject.GetComponent<Enemy>().Damage(damage * GameManager.instance.player_att * critical_damage);
 		}
 		else if (collision.gameObject.CompareTag("Enemy_head"))
 		{
-			collision.gameObject.GetComponentInParent<Enemy>().Damage(damage * GameManager.instance.player_att * 1.4f);
+			collision.gameObject.GetComponentInParent<Enemy>().Damage(damage * GameManager.instance.player_att * 1.4f * critical_damage);
 		}
 
 		//Destroy projectile on collision

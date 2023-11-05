@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 
 	public float player_att;
 	public float player_hp;
+	public float critical_per = 0;
 
 	public float current_time;
 	public int current_round;
@@ -71,7 +72,6 @@ public class GameManager : MonoBehaviour
 			//current_time 에 따른 게이지 띄우기
 			//
 		}
-
-	}
+	}    
 
 }

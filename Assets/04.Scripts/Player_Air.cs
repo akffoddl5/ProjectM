@@ -16,6 +16,8 @@ public class Player_Air : PlayerState
 	public override void Exit()
 	{
 		base.Exit();
+		player.current_jump_num = 0;
+
 	}
 
 	public override void FixedUpdate()
@@ -25,7 +27,7 @@ public class Player_Air : PlayerState
 
 		if (get_X != 0 || get_Y != 0)
 		{
-			dir = player.FlatRotation * new Vector3(get_X, 0, get_Y).normalized;
+			dir = player.FlatRotation() * new Vector3(get_X, 0, get_Y).normalized;
 			Quaternion requireRotation = Quaternion.LookRotation(dir);
 			player.transform.rotation = requireRotation;
 		}
@@ -34,6 +36,8 @@ public class Player_Air : PlayerState
 
 		if (!player.GroundDetected())
 			get_Jump += Physics.gravity.y * 3 * Time.deltaTime;
+
+		
 
 		if (player.GroundDetected())
 		{
@@ -45,6 +49,12 @@ public class Player_Air : PlayerState
 	{
 		base.Update();
 
-		
+		if (get_Space && player.can_jump_num > player.current_jump_num)
+		{
+			Debug.Log("flag2");
+			player.current_jump_num++;
+			get_Jump = jump_power * 1.3f;
+		}
+
 	}
 }

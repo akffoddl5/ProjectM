@@ -21,12 +21,13 @@ public class Player_Aim : PlayerState
 		//Camera.main.cullingMask -= LayerMask.GetMask("Player");
 		Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Player"));
 
+
+		player.aimCam_POV.m_HorizontalAxis.Value = player.vcam_POV.m_HorizontalAxis.Value;
+		player.aimCam_POV.m_VerticalAxis.Value = player.vcam_POV.m_VerticalAxis.Value;
 		player.vcam.gameObject.SetActive(false);
 		player.aimCam.gameObject.SetActive(true);
 		player.image_Aim.SetActive(true);
 
-		player.aimCam_POV.m_HorizontalAxis.Value = player.vcam_POV.m_HorizontalAxis.Value;
-		player.aimCam_POV.m_VerticalAxis.Value = player.vcam_POV.m_VerticalAxis.Value;
 
 	}
 
@@ -37,6 +38,8 @@ public class Player_Aim : PlayerState
 		player.body.transform.localRotation = Quaternion.identity;
 		//Debug.Log(player.body.transform.localRotation.eulerAngles + " :: 66 " + player.body.transform.rotation.eulerAngles);
 		//Debug.Log("rotation77 ");
+
+		Debug.Log(player.aimCam_POV.m_HorizontalAxis.Value + " " + player.aimCam_POV.m_VerticalAxis.Value);//
 
 		player.vcam_POV.m_HorizontalAxis.Value = player.aimCam_POV.m_HorizontalAxis.Value;
 		player.vcam_POV.m_VerticalAxis.Value = player.aimCam_POV.m_VerticalAxis.Value;

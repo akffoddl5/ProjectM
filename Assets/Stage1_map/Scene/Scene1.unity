@@ -24114,6 +24114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player_att: 3
   player_hp: 150
+  critical_per: 0
   current_time: 0
   current_round: 1
   round_time: 30
@@ -27827,7 +27828,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00390625, y: -0.0004348755}
+  m_AnchoredPosition: {x: -0.00390625, y: 0.00092315674}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1614840029
@@ -35616,9 +35617,9 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.0042552985, y: 0.00000011746306, z: -0.0000000010873009,
     w: 0.999991}
-  m_LocalPosition: {x: 0, y: -0.0483, z: 0.004}
-  m_LocalScale: {x: 0.031017821, y: 0.031017829, z: 0.031017821}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: -0.0225, z: -0.0062}
+  m_LocalScale: {x: 0.019, y: 0.019, z: 0.019}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4417492485778353252}
   - {fileID: 4298542109923702571}
@@ -38226,6 +38227,7 @@ MonoBehaviour:
   - {fileID: 1857889126285363393}
   - {fileID: 8518282282296514162}
   - {fileID: 5057970136273573312}
+  item_gate: {fileID: 0}
 --- !u!1 &2954225495929959371
 GameObject:
   m_ObjectHideFlags: 0
@@ -38934,6 +38936,8 @@ MonoBehaviour:
   speed: 5
   jump_power: 15
   dash_power: 50
+  can_jump_num: 1
+  current_jump_num: 0
   shoot_cool_left: 0
   shoot_cool_right: 0
   shoot_cool_total: 0
@@ -43902,9 +43906,9 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.0042552985, y: 0.00000011746306, z: -0.0000000010873009,
     w: 0.999991}
-  m_LocalPosition: {x: -0, y: -0.0262, z: -0.0041}
-  m_LocalScale: {x: 0.026512444, y: 0.034940757, z: 0.026512444}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -0, y: -0.0262, z: -0.0084}
+  m_LocalScale: {x: 0.014512441, y: 0.01912595, z: 0.014512441}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 9182010761208892254}
   - {fileID: 166481654539095600}

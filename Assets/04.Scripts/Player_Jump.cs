@@ -12,7 +12,6 @@ public class Player_Jump : PlayerState
 	{
 		base.Enter();
 		get_Jump = jump_power;
-		
 		//rb.AddForce(new Vector3(0, jump_power, 0));
 	}
 
@@ -25,9 +24,14 @@ public class Player_Jump : PlayerState
 	{
 		base.Update();
 
-		
 
-		
+		if (get_Space && player.can_jump_num > player.current_jump_num)
+		{
+			Debug.Log("flag1");
+			player.current_jump_num++;
+			get_Jump = jump_power * 1.3f ;
+		}
+
 
 
 	}
@@ -44,10 +48,14 @@ public class Player_Jump : PlayerState
 			player.transform.rotation = requireRotation;
 		}
 
+		//
+
 		CC.Move((dir * speed + new Vector3(0, get_Jump, 0)) * Time.deltaTime);
 		//get_Jump += Physics.gravity.y * Time.deltaTime;
 		if (!player.GroundDetected())
 			get_Jump += Physics.gravity.y * 3 * Time.deltaTime;
+
+		
 
 		if (CC.velocity.y <= 0)
 		{

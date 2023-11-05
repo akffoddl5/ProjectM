@@ -44,6 +44,8 @@ public class PlayerControl : MonoBehaviour
 	public float speed = 5f;
     public float jump_power = 500f;
 	public float dash_power = 60f;
+	public int can_jump_num = 1;
+	public int current_jump_num = 0;
 
 	//Å¸ÀÌ¸Ó
 	public float shoot_cool_left;
@@ -190,8 +192,16 @@ public class PlayerControl : MonoBehaviour
 		shoot_cool_total -= Time.deltaTime;
 	}
 
-	public Quaternion FlatRotation => Quaternion.Euler(0, rotationY, 0);
-	public Quaternion FlatRotation_aim => Quaternion.Euler(0, rotationY_aim, 0);
+
+	public Quaternion FlatRotation()
+	{
+		return Quaternion.Euler(0, rotationY, 0);
+	}
+	public Quaternion FlatRotation_aim()
+	{
+		
+		return Quaternion.Euler(0, rotationY_aim, 0);
+	}
 
 	int a1 = 0;
 	int a2 = 0;

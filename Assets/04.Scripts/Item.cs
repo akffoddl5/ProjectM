@@ -45,6 +45,7 @@ public class Item : MonoBehaviour
 
 	IEnumerator GetItem()
 	{
+		
 		get_complete = true;
 		rotate_speed = 25f;
 
@@ -114,13 +115,33 @@ public class Item : MonoBehaviour
 		//치명타 확률 증가
 		if (item_type == ITEM.GLASSES)
 		{
-
+			GameManager.instance.critical_per += 20;
 		}
 		//공격력 증가
 		else if (item_type == ITEM.BELT)
 		{
-
+			GameManager.instance.player_att += 2;
 		}
+		else if (item_type == ITEM.PARTYHAT)
+		{
+			GameObject.Find("Player").GetComponent<PlayerControl>().hp += 50;
+			GameObject.Find("Player").GetComponent<PlayerControl>().hp_max += 50;
+		}
+		else if (item_type == ITEM.SHOES)
+		{
+			GameObject.Find("Player").GetComponent<PlayerControl>().speed *= 1.2f;
+		}
+		else if (item_type == ITEM.WING_ANGEL)
+		{
+			GameObject.Find("Player").GetComponent<PlayerControl>().can_jump_num++;
+			GameObject.Find("Player").GetComponent<PlayerControl>().jump_power *= 1.2f;
+		}
+		else if (item_type == ITEM.WING_DEMON)
+		{
+			GameObject.Find("Player").GetComponent<PlayerControl>().dash_power *= 1.2f;
+		}
+
+		PlayerPrefs.SetInt(item_type.ToString(), 1);
 
 
 	}

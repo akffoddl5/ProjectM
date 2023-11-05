@@ -77,8 +77,8 @@ public class PlayerState
 		{
 			aiming_out = false;
 		}
-		dir = player.FlatRotation * new Vector3(get_X, 0, get_Y).normalized;
-		dir_aim = player.FlatRotation_aim * new Vector3(get_X, 0, get_Y).normalized;
+		dir = player.FlatRotation() * new Vector3(get_X, 0, get_Y).normalized;
+		dir_aim = player.FlatRotation_aim() * new Vector3(get_X, 0, get_Y).normalized;
 		
 
 		dash_cool -= Time.deltaTime;
