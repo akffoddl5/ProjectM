@@ -142,7 +142,7 @@ public class Item : MonoBehaviour
 		}
 
 		PlayerPrefs.SetInt(item_type.ToString(), 1);
-
+		Debug.Log(" 프리팹에 저장 : " + PlayerPrefs.GetInt(item_type.ToString()));
 
 	}
 

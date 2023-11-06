@@ -10,6 +10,12 @@ public class Item_Button : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 	public string item_description = "?";
 	public Text item_text;
 	public Sprite item_img;
+	public ITEM item_type;
+
+	private void Start()
+	{
+		Debug.Log(" 프리팹에 있나 ? <>>> " + item_type.ToString() + " "  + PlayerPrefs.GetInt(item_type.ToString()));
+	}
 
 	public void OnPointerEnter(PointerEventData eventData)
 	{

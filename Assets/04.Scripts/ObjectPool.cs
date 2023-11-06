@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 
 public enum ITEM {
+	NONE,
 	WING_ANGEL,
 	WING_DEMON,
 	SHOES,
