@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour
 	public GameObject have_item;
 	bool isDie = false;
 
+
 	private void Awake()
 	{
 		player = GameObject.FindGameObjectWithTag("Player");
@@ -57,8 +58,9 @@ public class Enemy : MonoBehaviour
 		if (have_item != null)
 		{
 			Debug.Log("item 스폰해야함1" + have_item.name);
-			Instantiate(have_item, transform.position + new Vector3(0,1,0), Quaternion.identity);
-			Instantiate(ObjectPool.instance.prefab_item_portal, transform.position, Quaternion.identity);
+			var a = Instantiate(have_item, transform.position + new Vector3(0,1,0), Quaternion.identity);
+			a.GetComponent<Item>().portal_gate = Instantiate(ObjectPool.instance.prefab_item_portal, transform.position, Quaternion.identity);
+
 		}
 		isDie = true;
 	}

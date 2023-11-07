@@ -47,10 +47,9 @@ public class SpawnManager : MonoBehaviour
 		{
 			idx++;
 			var obj =Instantiate(_stage.enemy_list[a], spawns[a].position, Quaternion.identity);
-			Instantiate(ObjectPool.instance.prefab_gate, spawns[a].position, Quaternion.identity);
+
 			if (idx == 0 || idx == 1 || idx ==2)
 			{
-				
 				int item_num = ObjectPool.instance.item_dic.Keys.Count;
 				int rand = Random.Range(0, item_num - 1);
 				obj.GetComponent<Enemy>().have_item = ObjectPool.instance.item_dic[(ITEM)rand];

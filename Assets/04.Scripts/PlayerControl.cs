@@ -220,11 +220,13 @@ public class PlayerControl : MonoBehaviour
 
 	public Vector3 AimDetected()
 	{
-		//return Camera.main.ScreenPointToRay(Input.mousePosition).direction;
+		//return Camera.main.
+		//PointToRay(Input.mousePosition).direction;
 		//Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
 
 		Vector3 screenCenter = new Vector3(0.5f, 0.5f, 0f);
 		Ray ray = Camera.main.ViewportPointToRay(screenCenter);
+		
 		
 		// 화면 중앙을 조준 위치로 설정합니다.
 		RaycastHit hit;
@@ -238,10 +240,7 @@ public class PlayerControl : MonoBehaviour
 			return objectPosition;
 		}
 
-		
 		return Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, Camera.main.nearClipPlane));
-
-
 
 	}
 

@@ -16,6 +16,8 @@ public class Item : MonoBehaviour
 
 	public Player_Item player_item;
 
+	public GameObject portal_gate;
+
 	
 
 	private void Start()
@@ -45,6 +47,10 @@ public class Item : MonoBehaviour
 
 	IEnumerator GetItem()
 	{
+		if (portal_gate != null)
+		{
+			Destroy(portal_gate);
+		}
 		
 		get_complete = true;
 		rotate_speed = 25f;
