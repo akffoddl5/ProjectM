@@ -217,7 +217,10 @@ MonoBehaviour:
   canvas_cam: {fileID: 0}
   rotate_speed: 2.5
   star: {fileID: 0}
-  item_type: 2
+  item_type: 3
+  item_scrollView_content: {fileID: 0}
+  player_item: {fileID: 0}
+  portal_gate: {fileID: 0}
 --- !u!65 &8662015697025040507
 BoxCollider:
   m_ObjectHideFlags: 0
