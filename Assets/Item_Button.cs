@@ -14,7 +14,15 @@ public class Item_Button : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
 	private void Start()
 	{
-		Debug.Log(" 프리팹에 있나 ? <>>> " + item_type.ToString() + " "  + PlayerPrefs.GetInt(item_type.ToString()));
+		if (PlayerPrefs.GetInt(item_type.ToString()) == 1)
+		{
+			gameObject.GetComponent<Image>().sprite = item_img;
+			gameObject.GetComponentInChildren<Text>().text = "";
+			gameObject.GetComponent<Image>().color = Color.white;
+
+
+		}
+		Debug.Log(" 프리팹에1 있나 ? <>>> " + item_type.ToString() + " "  + PlayerPrefs.GetInt(item_type.ToString()));
 	}
 
 	public void OnPointerEnter(PointerEventData eventData)
