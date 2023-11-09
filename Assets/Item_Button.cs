@@ -11,6 +11,7 @@ public class Item_Button : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 	public Text item_text;
 	public Sprite item_img;
 	public ITEM item_type;
+	public bool open = false;
 
 	private void Start()
 	{
@@ -19,7 +20,7 @@ public class Item_Button : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 			gameObject.GetComponent<Image>().sprite = item_img;
 			gameObject.GetComponentInChildren<Text>().text = "";
 			gameObject.GetComponent<Image>().color = Color.white;
-
+			open = true;
 
 		}
 		Debug.Log(" 프리팹에1 있나 ? <>>> " + item_type.ToString() + " "  + PlayerPrefs.GetInt(item_type.ToString()));
@@ -27,7 +28,10 @@ public class Item_Button : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
 	public void OnPointerEnter(PointerEventData eventData)
 	{
-		item_text.text = item_description;
+		if (open)
+			item_text.text = item_description;
+		else
+			item_text.text = "?";
 		var a = GetComponent<Image>().color;
 		a.a = 0.8f;
 		GetComponent<Image>().color = a;
