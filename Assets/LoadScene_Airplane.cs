@@ -40,10 +40,13 @@ public class LoadScene_Airplane : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             var a = Instantiate(boom, des.position, Quaternion.identity);
-            Destroy(a, 4);
+            Destroy(a,4);
+            transform.position = new Vector3(-100, -100, -100);
             StartCoroutine(LoadScene());
             //gameObject.SetActive(false);
             //Destroy(gameObject);
+
+            GameObject.Find("Ninja_").GetComponent<Animator>().Play("RUN");
 
             Debug.Log("ÁøÂ¥ Æã");
         }

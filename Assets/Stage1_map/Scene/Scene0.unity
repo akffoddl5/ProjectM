@@ -419,6 +419,7 @@ MonoBehaviour:
   item_text: {fileID: 1503172566}
   item_img: {fileID: 0}
   item_type: 0
+  open: 0
 --- !u!114 &26793833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -557,6 +558,7 @@ MonoBehaviour:
   item_text: {fileID: 1503172566}
   item_img: {fileID: 0}
   item_type: 0
+  open: 0
 --- !u!114 &27258430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -935,6 +937,7 @@ MonoBehaviour:
   item_text: {fileID: 1503172566}
   item_img: {fileID: 0}
   item_type: 0
+  open: 0
 --- !u!114 &33863470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1303,6 +1306,7 @@ MonoBehaviour:
   item_text: {fileID: 1503172566}
   item_img: {fileID: 21300000, guid: 5278f3439f8365743857e388b5023496, type: 3}
   item_type: 5
+  open: 0
 --- !u!114 &45746147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1678,6 +1682,7 @@ MonoBehaviour:
   item_text: {fileID: 1503172566}
   item_img: {fileID: 0}
   item_type: 0
+  open: 0
 --- !u!114 &54208614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5684,6 +5689,7 @@ MonoBehaviour:
   item_text: {fileID: 1503172566}
   item_img: {fileID: 0}
   item_type: 0
+  open: 0
 --- !u!114 &246044464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6183,6 +6189,7 @@ MonoBehaviour:
   item_text: {fileID: 1503172566}
   item_img: {fileID: 0}
   item_type: 0
+  open: 0
 --- !u!114 &270143592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8299,6 +8306,7 @@ MonoBehaviour:
   item_text: {fileID: 1503172566}
   item_img: {fileID: 21300000, guid: 1dac3fb6ac68d1a4caed2209509688a4, type: 3}
   item_type: 3
+  open: 0
 --- !u!114 &384117458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9948,6 +9956,7 @@ MonoBehaviour:
   item_text: {fileID: 1503172566}
   item_img: {fileID: 0}
   item_type: 0
+  open: 0
 --- !u!114 &442396078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10086,6 +10095,7 @@ MonoBehaviour:
   item_text: {fileID: 1503172566}
   item_img: {fileID: 0}
   item_type: 0
+  open: 0
 --- !u!114 &446542397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10344,6 +10354,7 @@ MonoBehaviour:
   item_text: {fileID: 1503172566}
   item_img: {fileID: 21300000, guid: a55072b7e00978b41b327ad544caa419, type: 3}
   item_type: 2
+  open: 0
 --- !u!114 &463984227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11124,6 +11135,7 @@ MonoBehaviour:
   item_text: {fileID: 1503172566}
   item_img: {fileID: 21300000, guid: 3083b2559d9265f4bb5554d62bd7fab5, type: 3}
   item_type: 6
+  open: 0
 --- !u!114 &487431115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11803,7 +11815,7 @@ PrefabInstance:
     - target: {fileID: 1289603297699539113, guid: 48daed4070de3dc4da7ce1f094b09ea1,
         type: 3}
       propertyPath: m_Name
-      value: Ninja_Demo@T-Pose (1)
+      value: Ninja_
       objectReference: {fileID: 0}
     - target: {fileID: 1289603297699539113, guid: 48daed4070de3dc4da7ce1f094b09ea1,
         type: 3}
@@ -18334,6 +18346,7 @@ MonoBehaviour:
   item_text: {fileID: 1503172566}
   item_img: {fileID: 0}
   item_type: 0
+  open: 0
 --- !u!114 &735064757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23984,6 +23997,7 @@ MonoBehaviour:
   item_text: {fileID: 1503172566}
   item_img: {fileID: 21300000, guid: 9f3e92767f9af914fa3827f1b16ecf63, type: 3}
   item_type: 4
+  open: 0
 --- !u!114 &934381443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25764,6 +25778,7 @@ MonoBehaviour:
   item_text: {fileID: 1503172566}
   item_img: {fileID: 21300000, guid: 08732164f70d6e946b5043a475212471, type: 3}
   item_type: 1
+  open: 0
 --- !u!114 &1044793377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26090,6 +26105,7 @@ MonoBehaviour:
   item_text: {fileID: 1503172566}
   item_img: {fileID: 0}
   item_type: 0
+  open: 0
 --- !u!114 &1055432766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27042,6 +27058,7 @@ MonoBehaviour:
   item_text: {fileID: 1503172566}
   item_img: {fileID: 0}
   item_type: 0
+  open: 0
 --- !u!114 &1110582366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27804,6 +27821,7 @@ MonoBehaviour:
   item_text: {fileID: 1503172566}
   item_img: {fileID: 0}
   item_type: 0
+  open: 0
 --- !u!114 &1143352096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31223,6 +31241,7 @@ MonoBehaviour:
   item_text: {fileID: 1503172566}
   item_img: {fileID: 0}
   item_type: 0
+  open: 0
 --- !u!114 &1273603971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32058,6 +32077,7 @@ MonoBehaviour:
   item_text: {fileID: 1503172566}
   item_img: {fileID: 0}
   item_type: 0
+  open: 0
 --- !u!114 &1323502205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33395,6 +33415,7 @@ MonoBehaviour:
   item_text: {fileID: 1503172566}
   item_img: {fileID: 0}
   item_type: 0
+  open: 0
 --- !u!114 &1406494231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34464,6 +34485,7 @@ MonoBehaviour:
   item_text: {fileID: 1503172566}
   item_img: {fileID: 0}
   item_type: 0
+  open: 0
 --- !u!114 &1444074569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35554,6 +35576,7 @@ MonoBehaviour:
   item_text: {fileID: 1503172566}
   item_img: {fileID: 0}
   item_type: 0
+  open: 0
 --- !u!114 &1483900082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36834,6 +36857,7 @@ MonoBehaviour:
   item_text: {fileID: 1503172566}
   item_img: {fileID: 0}
   item_type: 0
+  open: 0
 --- !u!114 &1537467307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38526,6 +38550,7 @@ MonoBehaviour:
   item_text: {fileID: 1503172566}
   item_img: {fileID: 0}
   item_type: 0
+  open: 0
 --- !u!114 &1586044393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38886,6 +38911,7 @@ MonoBehaviour:
   item_text: {fileID: 1503172566}
   item_img: {fileID: 0}
   item_type: 0
+  open: 0
 --- !u!114 &1594573076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42436,6 +42462,7 @@ MonoBehaviour:
   item_text: {fileID: 1503172566}
   item_img: {fileID: 0}
   item_type: 0
+  open: 0
 --- !u!114 &1761305844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48628,6 +48655,7 @@ MonoBehaviour:
   item_text: {fileID: 1503172566}
   item_img: {fileID: 0}
   item_type: 0
+  open: 0
 --- !u!114 &1979306361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50097,6 +50125,7 @@ MonoBehaviour:
   item_text: {fileID: 1503172566}
   item_img: {fileID: 0}
   item_type: 0
+  open: 0
 --- !u!114 &2065434109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50482,6 +50511,7 @@ MonoBehaviour:
   item_text: {fileID: 1503172566}
   item_img: {fileID: 0}
   item_type: 0
+  open: 0
 --- !u!114 &2075877976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51617,7 +51647,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 2
   m_CollisionDetection: 0
 --- !u!23 &1066332740608324390
 MeshRenderer:
@@ -53488,7 +53518,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 2
   m_CollisionDetection: 0
 --- !u!4 &4583586087997410492
 Transform:

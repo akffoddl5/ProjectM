@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HS_ProjectileMover : MonoBehaviour
 {
-    public float speed = 15f;
+    float speed ;
     public float hitOffset = 0f;
     public bool UseFirePointRotation;
     public Vector3 rotationOffset = new Vector3(0, 0, 0);
@@ -19,133 +19,136 @@ public class HS_ProjectileMover : MonoBehaviour
 
     void Start()
     {
-        player_pos = GameObject.FindWithTag("Player").transform.position;
+        speed = 20f;
+        //player_pos = GameObject.FindWithTag("Player").transform.position;
         //_dir = (player_pos - transform.position).normalized;
-        rb = GetComponent<Rigidbody>();
-        if (flash != null)
-        {
-            //Instantiate flash effect on projectile position
-            var flashInstance = Instantiate(flash, transform.position, Quaternion.identity);
-            flashInstance.transform.forward = gameObject.transform.forward;
-            
-            //Destroy flash effect depending on particle Duration time
-            var flashPs = flashInstance.GetComponent<ParticleSystem>();
-            if (flashPs != null)
-            {
-                Destroy(flashInstance, flashPs.main.duration);
-            }
-            else
-            {
-                var flashPsParts = flashInstance.transform.GetChild(0).GetComponent<ParticleSystem>();
-                Destroy(flashInstance, flashPsParts.main.duration);
-            }
-        }
-        Destroy(gameObject,5);
-	}
+        rb = transform.GetComponent<Rigidbody>();
+        if (rb != null) Debug.Log("rb 찾음2");
+        else Debug.Log("rb 못찾음44");
+        //if (flash != null)
+        //{
+        //    //Instantiate flash effect on projectile position
+        //    var flashInstance = Instantiate(flash, transform.position, Quaternion.identity);
+        //    flashInstance.transform.forward = gameObject.transform.forward;
+
+        //    //Destroy flash effect depending on particle Duration time
+        //    var flashPs = flashInstance.GetComponent<ParticleSystem>();
+        //    if (flashPs != null)
+        //    {
+        //        Destroy(flashInstance, flashPs.main.duration);
+        //    }
+        //    else
+        //    {
+        //        var flashPsParts = flashInstance.transform.GetChild(0).GetComponent<ParticleSystem>();
+        //        Destroy(flashInstance, flashPsParts.main.duration);
+        //    }
+        //}
+        //Destroy(gameObject,5);
+    }
 
     void FixedUpdate ()
     {
-        
+        Debug.Log(speed);
 		if (speed != 0)
         {
-            //rb.velocity = transform.forward * speed;
-            rb.velocity = _dir * speed;
+            rb.velocity = transform.forward * speed;
+            //rb.velocity = _dir * speed;
             //transform.position += transform.forward * (speed * Time.deltaTime);         
         }
 	}
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (!other.CompareTag("Player")) return;
-        //Lock all axes movement and rotation
-        rb.constraints = RigidbodyConstraints.FreezeAll;
-        speed = 0;
+//    private void OnTriggerEnter(Collider other)
+//    {
+//        if (!other.CompareTag("Player")) return;
+//        //Lock all axes movement and rotation
+//        rb.constraints = RigidbodyConstraints.FreezeAll;
+//        //speed = 0;
 
-        Vector3 contact = other.ClosestPoint(transform.position);
+//        Vector3 contact = other.ClosestPoint(transform.position);
 
-        other.gameObject.GetComponent<PlayerControl>().Damage(att);
-        //Debug.Log(att + " 만큼 뎀지 줌");
+//        other.gameObject.GetComponent<PlayerControl>().Damage(att);
+//        //Debug.Log(att + " 만큼 뎀지 줌");
 
-        ////ContactPoint contact = collision.contacts[0];
-        //Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
-        //Vector3 pos = contact.point + contact.normal * hitOffset;
+//        ////ContactPoint contact = collision.contacts[0];
+//        //Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
+//        //Vector3 pos = contact.point + contact.normal * hitOffset;
 
-        ////Spawn hit effect on collision
-        //if (hit != null)
-        //{
-        //    var hitInstance = Instantiate(hit, pos, rot);
-        //    if (UseFirePointRotation) { hitInstance.transform.rotation = gameObject.transform.rotation * Quaternion.Euler(0, 180f, 0); }
-        //    else if (rotationOffset != Vector3.zero) { hitInstance.transform.rotation = Quaternion.Euler(rotationOffset); }
-        //    else { hitInstance.transform.LookAt(contact.point + contact.normal); }
+//        ////Spawn hit effect on collision
+//        //if (hit != null)
+//        //{
+//        //    var hitInstance = Instantiate(hit, pos, rot);
+//        //    if (UseFirePointRotation) { hitInstance.transform.rotation = gameObject.transform.rotation * Quaternion.Euler(0, 180f, 0); }
+//        //    else if (rotationOffset != Vector3.zero) { hitInstance.transform.rotation = Quaternion.Euler(rotationOffset); }
+//        //    else { hitInstance.transform.LookAt(contact.point + contact.normal); }
 
-        //    //Destroy hit effects depending on particle Duration time
-        //    var hitPs = hitInstance.GetComponent<ParticleSystem>();
-        //    if (hitPs != null)
-        //    {
-        //        Destroy(hitInstance, hitPs.main.duration);
-        //    }
-        //    else
-        //    {
-        //        var hitPsParts = hitInstance.transform.GetChild(0).GetComponent<ParticleSystem>();
-        //        Destroy(hitInstance, hitPsParts.main.duration);
-        //    }
-        //}
+//        //    //Destroy hit effects depending on particle Duration time
+//        //    var hitPs = hitInstance.GetComponent<ParticleSystem>();
+//        //    if (hitPs != null)
+//        //    {
+//        //        Destroy(hitInstance, hitPs.main.duration);
+//        //    }
+//        //    else
+//        //    {
+//        //        var hitPsParts = hitInstance.transform.GetChild(0).GetComponent<ParticleSystem>();
+//        //        Destroy(hitInstance, hitPsParts.main.duration);
+//        //    }
+//        //}
 
-        ////Removing trail from the projectile on cillision enter or smooth removing. Detached elements must have "AutoDestroying script"
-        //foreach (var detachedPrefab in Detached)
-        //{
-        //    if (detachedPrefab != null)
-        //    {
-        //        detachedPrefab.transform.parent = null;
-        //        Destroy(detachedPrefab, 1);
-        //    }
-        //}
-        Destroy(gameObject);
+//        ////Removing trail from the projectile on cillision enter or smooth removing. Detached elements must have "AutoDestroying script"
+//        //foreach (var detachedPrefab in Detached)
+//        //{
+//        //    if (detachedPrefab != null)
+//        //    {
+//        //        detachedPrefab.transform.parent = null;
+//        //        Destroy(detachedPrefab, 1);
+//        //    }
+//        //}
+//        Destroy(gameObject);
     
-}
+//}
 
-void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log("collision enter");
-        //Lock all axes movement and rotation
-        rb.constraints = RigidbodyConstraints.FreezeAll;
-        speed = 0;
+//void OnCollisionEnter(Collision collision)
+//    {
+//        //Debug.Log("collision enter");
+//        //Lock all axes movement and rotation
+//        rb.constraints = RigidbodyConstraints.FreezeAll;
+//        //speed = 0;
 
-        ContactPoint contact = collision.contacts[0];
-        Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
-        Vector3 pos = contact.point + contact.normal * hitOffset;
+//        ContactPoint contact = collision.contacts[0];
+//        Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
+//        Vector3 pos = contact.point + contact.normal * hitOffset;
 
-        //Spawn hit effect on collision
-        if (hit != null)
-        {
-            var hitInstance = Instantiate(hit, pos, rot);
-            if (UseFirePointRotation) { hitInstance.transform.rotation = gameObject.transform.rotation * Quaternion.Euler(0, 180f, 0); }
-            else if (rotationOffset != Vector3.zero) { hitInstance.transform.rotation = Quaternion.Euler(rotationOffset); }
-            else { hitInstance.transform.LookAt(contact.point + contact.normal); }
+//        //Spawn hit effect on collision
+//        if (hit != null)
+//        {
+//            var hitInstance = Instantiate(hit, pos, rot);
+//            if (UseFirePointRotation) { hitInstance.transform.rotation = gameObject.transform.rotation * Quaternion.Euler(0, 180f, 0); }
+//            else if (rotationOffset != Vector3.zero) { hitInstance.transform.rotation = Quaternion.Euler(rotationOffset); }
+//            else { hitInstance.transform.LookAt(contact.point + contact.normal); }
 
-            //Destroy hit effects depending on particle Duration time
-            var hitPs = hitInstance.GetComponent<ParticleSystem>();
-            if (hitPs != null)
-            {
-                Destroy(hitInstance, hitPs.main.duration);
-            }
-            else
-            {
-                var hitPsParts = hitInstance.transform.GetChild(0).GetComponent<ParticleSystem>();
-                Destroy(hitInstance, hitPsParts.main.duration);
-            }
-        }
+//            //Destroy hit effects depending on particle Duration time
+//            var hitPs = hitInstance.GetComponent<ParticleSystem>();
+//            if (hitPs != null)
+//            {
+//                Destroy(hitInstance, hitPs.main.duration);
+//            }
+//            else
+//            {
+//                var hitPsParts = hitInstance.transform.GetChild(0).GetComponent<ParticleSystem>();
+//                Destroy(hitInstance, hitPsParts.main.duration);
+//            }
+//        }
 
-        //Removing trail from the projectile on cillision enter or smooth removing. Detached elements must have "AutoDestroying script"
-        foreach (var detachedPrefab in Detached)
-        {
-            if (detachedPrefab != null)
-            {
-                detachedPrefab.transform.parent = null;
-                Destroy(detachedPrefab, 1);
-            }
-        }
-        //Destroy projectile on collision
-        Destroy(gameObject);
-    }
+//        //Removing trail from the projectile on cillision enter or smooth removing. Detached elements must have "AutoDestroying script"
+//        foreach (var detachedPrefab in Detached)
+//        {
+//            if (detachedPrefab != null)
+//            {
+//                detachedPrefab.transform.parent = null;
+//                Destroy(detachedPrefab, 1);
+//            }
+//        }
+//        //Destroy projectile on collision
+//        Destroy(gameObject);
+//    }
 }
