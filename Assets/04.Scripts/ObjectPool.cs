@@ -50,7 +50,11 @@ public class ObjectPool : MonoBehaviour
 		}
 	}
 
-	private void Start()
+
+
+
+
+private void Start()
 	{
 		item_dic.Add(ITEM.NONE, null);
 		item_dic.Add(ITEM.WING_ANGEL, prefab_items[0]);
