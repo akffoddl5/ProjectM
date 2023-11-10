@@ -41,7 +41,7 @@ public class LoadScene_Airplane : MonoBehaviour
         {
             var a = Instantiate(boom, des.position, Quaternion.identity);
             Destroy(a,4);
-            transform.position = new Vector3(-100, -100, -100);
+            
             StartCoroutine(LoadScene());
             //gameObject.SetActive(false);
             //Destroy(gameObject);
@@ -63,7 +63,9 @@ public class LoadScene_Airplane : MonoBehaviour
 
     IEnumerator LoadScene()
     {
-        Debug.Log("flag0");
+        yield return new WaitForSeconds(0.2f);
+		transform.position = new Vector3(-100, -100, -100);
+		Debug.Log("flag0");
         yield return new WaitForSeconds(4);
         Debug.Log("flag1");
         SceneManager.LoadScene(1);

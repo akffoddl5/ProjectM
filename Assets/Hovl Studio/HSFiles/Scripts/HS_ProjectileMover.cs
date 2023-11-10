@@ -48,7 +48,6 @@ public class HS_ProjectileMover : MonoBehaviour
 
     void FixedUpdate ()
     {
-        Debug.Log(speed);
 		if (speed != 0)
         {
             rb.velocity = transform.forward * speed;
