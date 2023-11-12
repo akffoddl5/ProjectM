@@ -2,7 +2,9 @@ using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 
 public class UIManager : MonoBehaviour
 {
@@ -18,6 +20,8 @@ public class UIManager : MonoBehaviour
 	public GameObject menu;
 	public GameObject option;
 	public GameObject exit;
+	public GameObject soloStage;
+	public GameObject endTimeLine;
 
 	//사운드 옵션
 	public Slider option_fx;
@@ -42,16 +46,13 @@ public class UIManager : MonoBehaviour
 
 	private void Awake()
 	{
-		if (instance == null)
-		{
-			instance = this;
-			DontDestroyOnLoad(gameObject);
-		}
-		else
-		{
-			Destroy(gameObject);
-		}
+		if (instance != null) Destroy(instance.gameObject);
+		instance = this;
+
+		
 	}
+
+
 
 
 	private void Update()
@@ -78,7 +79,8 @@ public class UIManager : MonoBehaviour
 		{
 			if (i != 0) SoundManager.instance.audios[i].volume = option_fx.value;
 		}
-		//Debug.Log(player.hp + "/" + player.hp_max);
+
+		
 	}
 
 	public void OptionClose()
@@ -121,5 +123,42 @@ public class UIManager : MonoBehaviour
 	public void GameExit()
 	{
 		Application.Quit();
+	}
+
+	public void SoloCor(int _start, int _end)
+	{
+		StartCoroutine(CorSoloInit(_start, _end));
+	}
+
+	IEnumerator CorSoloInit(int _start, int _end) {
+		soloStage.transform.localScale = Vector3.one * _start;
+		while (true)
+		{
+			soloStage.transform.localScale
+				= Vector3.MoveTowards(soloStage.transform.localScale, Vector3.one * _end, 25);
+			yield return null;
+
+			if (Vector3.Distance(soloStage.transform.localScale, Vector3.one * _end) < 10) break;
+		}
+
+
+		yield return new WaitForSeconds(3f);
+
+		while (true)
+		{
+			soloStage.transform.localScale
+				= Vector3.MoveTowards(soloStage.transform.localScale, Vector3.one * 120, 25);
+			yield return null;
+
+			if (Vector3.Distance(soloStage.transform.localScale, Vector3.one * 120) < 10) break;
+		}
+
+		endTimeLine.SetActive(true);
+		yield break;
+	}
+
+	public void GoLobbyScene()
+	{
+		SceneManager.LoadScene(0);
 	}
 }

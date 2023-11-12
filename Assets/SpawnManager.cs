@@ -7,7 +7,7 @@ public class SpawnManager : MonoBehaviour
     public static SpawnManager instance;
 
 	public Transform[] spawns;
-	public Stage[] stages = new Stage[4];
+	public Stage[] stages = new Stage[3];
 
 	private void Awake()
 	{

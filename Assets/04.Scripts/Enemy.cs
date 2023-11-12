@@ -49,7 +49,10 @@ public class Enemy : MonoBehaviour
 
     public virtual void Die() {
 		if (isDie) return;
-		agent.speed = 0f;
+		if (agent != null)
+		{
+			agent.speed = 0f;
+		}
 		anim.SetBool("Die", true);
 		Destroy(gameObject, 1.5f);
 

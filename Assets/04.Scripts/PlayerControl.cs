@@ -15,6 +15,7 @@ public class PlayerControl : MonoBehaviour
     public PlayerState dashState;
     public PlayerState runState;
 	public PlayerState aimState;
+	public PlayerState dieState;
 
 	//체크
 	public Transform groundCheck1;
@@ -31,10 +32,14 @@ public class PlayerControl : MonoBehaviour
 	public Animator anim;
 	public CinemachineVirtualCamera vcam;
 	public CinemachineVirtualCamera aimCam;
+	public CinemachineVirtualCamera endingCam;
 	public CinemachineTransposer vcam_trans;
 	public CinemachineTransposer aimcam_trans;
 	public CinemachinePOV vcam_POV;
 	public CinemachinePOV aimCam_POV;
+	public GameObject left_gun;
+	public GameObject right_gun;
+	
 	
 
 	public float rotationY;
@@ -90,6 +95,7 @@ public class PlayerControl : MonoBehaviour
 		dashState = new Player_Dash("DASH", stateMachine, this);
 		runState = new Player_Run("RUN", stateMachine, this);
 		aimState = new Player_Aim("Aiming", stateMachine, this);
+		dieState = new Player_Die("Die", stateMachine, this);
 
 		stateMachine.Initialize(idleState);
 	}
@@ -163,13 +169,13 @@ public class PlayerControl : MonoBehaviour
     {
 		stateMachine.cur_state.Update();
 
-		if (Input.GetKeyDown(KeyCode.LeftAlt))
-		{
-			Cursor.visible = !Cursor.visible;
+		//if (Input.GetKeyDown(KeyCode.LeftAlt))
+		//{
+		//	Cursor.visible = !Cursor.visible;
 			
-			Cursor.lockState =  (CursorLockMode)((int)Cursor.lockState  ^ 1);
-			Debug.Log(Cursor.lockState + "  << locked state");
-		}
+		//	Cursor.lockState =  (CursorLockMode)((int)Cursor.lockState  ^ 1);
+		//	Debug.Log(Cursor.lockState + "  << locked state");
+		//}
 
 		//화면각 계산
 		var state = vcam.State;
@@ -263,6 +269,24 @@ public class PlayerControl : MonoBehaviour
 
 	public void Die()
 	{
-		Debug.Log("Die..");
+		stateMachine.ChangeState(dieState);
+
+		GetComponent<PlayerControl>().endingCam.transform.parent = null;
+		GetComponent<PlayerControl>().endingCam.gameObject.SetActive(true);
+		gameObject.GetComponent<Collider>().enabled = false;
+
+		UIManager.instance.SoloCor(5000, 1000);
+		UIManager.instance.SoloCor(5000, 1000);
+
+	}
+
+	public void ThrowGun()
+	{
+		left_gun.transform.parent = null;//
+		right_gun.transform.parent = null;
+		left_gun.GetComponent<Rigidbody>().useGravity = true;
+		right_gun.GetComponent<Rigidbody>().useGravity = true;
+		left_gun.GetComponent<Rigidbody>().AddForce(transform.forward * 500 + Vector3.up * 200f);
+		right_gun.GetComponent<Rigidbody>().AddForce(transform.forward * 700 + Vector3.up * 300f);
 	}
 }

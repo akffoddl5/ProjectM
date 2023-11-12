@@ -44,4 +44,15 @@ public class SoundManager : MonoBehaviour
 
 		//clip_dictionary[Sound_Type.BACKGROUND] = clips[0];
 	}
+
+	private void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.LeftAlt))
+		{
+			Cursor.visible = !Cursor.visible;
+
+			Cursor.lockState = (CursorLockMode)((int)Cursor.lockState ^ 1);
+			Debug.Log(Cursor.lockState + "  << locked state");
+		}
+	}
 }

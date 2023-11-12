@@ -14,13 +14,13 @@ public class Shark : Enemy
 
 	void Start()
     {
-		//hp_max = 300;
-		//hp = hp_max;
-		//hp_text.text = hp_max + "/" + hp_max;
-		//hp_slider.maxValue = hp_max;
-		//hp_slider.value = hp;//
+		hp_max = 300;
+		hp = hp_max;
+		hp_text.text = hp_max + "/" + hp_max;
+		hp_slider.maxValue = hp_max;
+		hp_slider.value = hp;//
 
-		//hp_slider.gameObject.GetComponent<RectTransform>().localScale = new Vector3(hp_max * 0.003f, hp_slider.gameObject.GetComponent<RectTransform>().localScale.y, hp_slider.gameObject.GetComponent<RectTransform>().localScale.z);
+		hp_slider.gameObject.GetComponent<RectTransform>().localScale = new Vector3(hp_max * 0.003f, hp_slider.gameObject.GetComponent<RectTransform>().localScale.y, hp_slider.gameObject.GetComponent<RectTransform>().localScale.z);
 
 		rb = GetComponent<Rigidbody>();
 		

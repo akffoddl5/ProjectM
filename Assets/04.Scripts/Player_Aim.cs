@@ -39,7 +39,7 @@ public class Player_Aim : PlayerState
 		//Debug.Log(player.body.transform.localRotation.eulerAngles + " :: 66 " + player.body.transform.rotation.eulerAngles);
 		//Debug.Log("rotation77 ");
 
-		Debug.Log(player.aimCam_POV.m_HorizontalAxis.Value + " " + player.aimCam_POV.m_VerticalAxis.Value);//
+		//Debug.Log(player.aimCam_POV.m_HorizontalAxis.Value + " " + player.aimCam_POV.m_VerticalAxis.Value);//
 
 		player.vcam_POV.m_HorizontalAxis.Value = player.aimCam_POV.m_HorizontalAxis.Value;
 		player.vcam_POV.m_VerticalAxis.Value = player.aimCam_POV.m_VerticalAxis.Value;

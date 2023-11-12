@@ -98,7 +98,7 @@ public class Mummy_Attack : StateMachineBehaviour
 	{
 		animator.GetComponent<Mummy>().attack_done = false;
 		Destroy(detect_line);
-		Debug.Log("MUMMY EXIT!!!!");
+		//Debug.Log("MUMMY EXIT!!!!");
 	}
 
 	// OnStateMove is called right after Animator.OnAnimatorMove()

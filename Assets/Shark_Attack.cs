@@ -10,11 +10,11 @@ public class Shark_Attack : StateMachineBehaviour
 	public float att;
 
     public float attack_cool;
-    public float attack_cool_max = 3f;
+    [SerializeField] float attack_cool_max = 5f;
 
 	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-		player = GameObject.FindWithTag("Player");
+		player = GameObject.FindWithTag("Player");//
 		rb = animator.GetComponent<Rigidbody>();
 	}
 

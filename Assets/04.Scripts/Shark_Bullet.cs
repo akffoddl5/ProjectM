@@ -8,15 +8,16 @@ public class Shark_Bullet : MonoBehaviour
 
     void Start()
     {
-        target = GameObject.FindWithTag("Player").transform.position;
+        target = GameObject.FindWithTag("Player").transform.position + new Vector3(0,0.5f,0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(target);
+        
+        //transform.LookAt(target);
 
-        transform.position = Vector3.MoveTowards(transform.position, target, 0.1f);
+        //transform.position = Vector3.MoveTowards(transform.position, target, 0.01f);
         
     }
 }

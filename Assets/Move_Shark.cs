@@ -24,17 +24,14 @@ public class Move_Shark : StateMachineBehaviour
 		if (Vector3.Distance(new Vector3(player.transform.position.x, animator.transform.position.y, player.transform.position.z), animator.transform.position) > 15f)
 		{
 			rb.velocity = a.normalized * speed * Time.deltaTime;
-			Debug.Log("red3");
 		}
 		else if (Vector3.Distance(new Vector3(player.transform.position.x, animator.transform.position.y, player.transform.position.z), animator.transform.position) < 5f)
 		{
 			rb.velocity = -a.normalized * speed * Time.deltaTime;
-			Debug.Log("red2");
 		}
 		else
 		{
-			Debug.Log("red");
-			animator.Play("Attack");
+			animator.Play("Attack");//
 		}
 	}
 

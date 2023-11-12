@@ -28,26 +28,18 @@ public class GameManager : MonoBehaviour
 
 	private void Awake()
 	{
-		if (instance == null)
-		{
-			instance = this;
-			DontDestroyOnLoad(gameObject);
-		}
-		else
-		{
-			Destroy(gameObject);
-		}
+		if (instance != null) Destroy(instance.gameObject);
+		instance = this;
 	}
 
 	private void Start()
 	{
-		SpawnManager.instance.Spawn(1);
-
+		SpawnManager.instance.Spawn(0);
 	}
 
 	private void Update()
 	{
-		if (UIManager.instance != null)
+		if (UIManager.instance != null && UIManager.instance.level_bar != null)
 		{
 			current_time += Time.deltaTime;
 			if (current_time > round_time)
@@ -62,8 +54,7 @@ public class GameManager : MonoBehaviour
 
 
 				//몬스터 38번 소환진이랑 함꼐 스폰 (스크립터블오브젝트로 할까나 말까나)
-				
-				SpawnManager.instance.Spawn(1);
+				SpawnManager.instance.Spawn(current_round-1);
 				
 			}
 

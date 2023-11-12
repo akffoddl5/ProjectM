@@ -178,7 +178,7 @@ MonoBehaviour:
   speed: 0
   att: 0
   attack_cool: 0
-  attack_cool_max: 1
+  attack_cool_max: 2.5
 --- !u!114 &8046103408048942297
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Stage2
   m_EditorClassIdentifier: 
   enemy_list:
-  - {fileID: 5982712990688275268, guid: 43894d38214b07d46be46c34bc219e19, type: 3}
-  - {fileID: 5982712990688275268, guid: 43894d38214b07d46be46c34bc219e19, type: 3}
-  - {fileID: 5982712990688275268, guid: 43894d38214b07d46be46c34bc219e19, type: 3}
-  - {fileID: 5982712990688275268, guid: 43894d38214b07d46be46c34bc219e19, type: 3}
-  - {fileID: 5982712990688275268, guid: 43894d38214b07d46be46c34bc219e19, type: 3}
+  - {fileID: 7784818721531726808, guid: f50e05998d2954d4cb06edafc204e68f, type: 3}
+  - {fileID: 7784818721531726808, guid: f50e05998d2954d4cb06edafc204e68f, type: 3}
+  - {fileID: 7784818721531726808, guid: f50e05998d2954d4cb06edafc204e68f, type: 3}
+  - {fileID: 2637751224771751847, guid: fe7fc57a6c19bb94e855589c3851b842, type: 3}
+  - {fileID: 2637751224771751847, guid: fe7fc57a6c19bb94e855589c3851b842, type: 3}
