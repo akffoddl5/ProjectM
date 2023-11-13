@@ -57,7 +57,7 @@ public class Mummy : Enemy
     public void AttackMotion()
     {
 		tornado_obj = Instantiate(tornado, attack_generator.transform.position, Quaternion.identity);
-        Destroy(tornado_obj, 2.65f);
+        Destroy(tornado_obj, 3.75f);
 		//a.transform.LookAt(player.transform.position);
 		
 
@@ -82,7 +82,7 @@ public class Mummy : Enemy
 
     IEnumerator MakeBig(GameObject a) {
         if (a == null) yield break;
-        while (a.transform.localScale.x < 0.4f)
+        while (a.transform.localScale.x < 0.8f)
         {
             a.transform.localScale += new Vector3(0.003f, 0.003f, 0.003f);
 

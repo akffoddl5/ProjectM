@@ -13,12 +13,12 @@ public class DelayActive : MonoBehaviour
         m_time = Time.time;
     }
 
-    // Update is called once per frame
-    //void Update()
-    //{
-    //    if (Time.time > m_time + m_delayTime)
-    //        for(int i = 0; i< m_activeObj.Length; i++)
-    //            if(m_activeObj[i] != null)
-    //                m_activeObj[i].SetActive(true);
-    //}
+	//
+	void Update()
+	{
+		if (Time.time > m_time + m_delayTime)
+			for (int i = 0; i < m_activeObj.Length; i++)
+				if (m_activeObj[i] != null)
+					m_activeObj[i].SetActive(true);
+	}
 }

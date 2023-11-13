@@ -1450,7 +1450,7 @@ GameObject:
   - component: {fileID: 1804987584771530860}
   - component: {fileID: 5982712990688275268}
   - component: {fileID: 1635524857653002443}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mini simple skeleton demo_LEVEL2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1541,6 +1541,7 @@ MonoBehaviour:
   hp_text: {fileID: 2017422684012556570}
   anim: {fileID: 4056521682106781536}
   player: {fileID: 0}
+  have_item: {fileID: 0}
 --- !u!136 &1635524857653002443
 CapsuleCollider:
   m_ObjectHideFlags: 0

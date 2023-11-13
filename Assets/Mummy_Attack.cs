@@ -30,7 +30,8 @@ public class Mummy_Attack : StateMachineBehaviour
 		attack_generator = animator.gameObject.GetComponent<Mummy>().attack_generator;
 		
 
-		timer1 = 4.0f;
+		timer1 = 5.0f;
+		//timer2 = 0.35f;
 		timer2 = 0.35f;
 
 		animator.SetBool("Move", false);
@@ -82,6 +83,7 @@ public class Mummy_Attack : StateMachineBehaviour
 		{
 			animator.GetComponent<Mummy>().attack_done = false;
 			animator.GetComponent<Mummy>().Shoot(bullet_dir);
+			Debug.Log("shoot Çß³Ä");//
 			Destroy(detect_line);
 			
 			animator.SetBool("Move", true);

@@ -61,7 +61,7 @@ public class HS_ProjectileMover : MonoBehaviour
 
 	private void OnTriggerEnter(Collider other)
 	{
-
+		Debug.Log(other.gameObject.name);
 		//Lock all axes movement and rotation//
 		rb.constraints = RigidbodyConstraints.FreezeAll;
 		speed = 0;//

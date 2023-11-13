@@ -927,7 +927,7 @@ GameObject:
   - component: {fileID: 3709249568380189279}
   - component: {fileID: 607382191920210986}
   - component: {fileID: 5548007793880445171}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: shark
   m_TagString: Enemy
   m_Icon: {fileID: 0}

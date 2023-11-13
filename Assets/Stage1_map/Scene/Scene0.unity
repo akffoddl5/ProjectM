@@ -21837,6 +21837,7 @@ MonoBehaviour:
   prefab_item_trail: {fileID: 0}
   prefab_item_trail_in_canvas: {fileID: 0}
   prefab_item_button: {fileID: 0}
+  prefab_shark_bullet: {fileID: 0}
   prefab_items: []
   item_images: []
 --- !u!4 &851463333
@@ -23256,6 +23257,7 @@ MonoBehaviour:
     type: 3}
   prefab_item_trail_in_canvas: {fileID: 0}
   prefab_item_button: {fileID: 0}
+  prefab_shark_bullet: {fileID: 0}
   prefab_items:
   - {fileID: 5420909579780415968, guid: 3edc00fd49ed059448c7801320887746, type: 3}
   - {fileID: 5268751154636669742, guid: 6984605ccd97ec2498821381cc17aebc, type: 3}
@@ -24953,7 +24955,7 @@ Transform:
   m_GameObject: {fileID: 984441250}
   serializedVersion: 2
   m_LocalRotation: {x: 0.009418626, y: -0.44189507, z: 0.0046560513, w: 0.8970052}
-  m_LocalPosition: {x: 63.109, y: 22.893164, z: 44.32019}
+  m_LocalPosition: {x: 63.11, y: 22.855, z: 44.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -35491,7 +35493,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 0.6650944, b: 0.6650944, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
