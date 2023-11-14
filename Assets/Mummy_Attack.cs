@@ -30,7 +30,7 @@ public class Mummy_Attack : StateMachineBehaviour
 		attack_generator = animator.gameObject.GetComponent<Mummy>().attack_generator;
 		
 
-		timer1 = 5.0f;
+		timer1 = 5 * 60 * Time.fixedDeltaTime;
 		//timer2 = 0.35f;
 		timer2 = 0.35f;
 
@@ -40,7 +40,10 @@ public class Mummy_Attack : StateMachineBehaviour
 	
 	override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
+		Debug.Log(timer1);
 		timer1 -= Time.fixedDeltaTime;
+
+
 
 
 		// 플레이어가 있는 경우에만 실행

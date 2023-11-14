@@ -73,13 +73,13 @@ public class Item : MonoBehaviour
 		while (transform.localScale.x > 0.1f)
 		{
 			//transform.localPosition += new Vector3(0, 12f, 0);
-			transform.localScale -= new Vector3(15f, 15f, 15f);
+			transform.localScale -= new Vector3(24f, 24f, 24f);
 			//transform.position += new Vector3(0, 0.01f, 0);//
 			//Vector3 cur_point = Camera.main.WorldToScreenPoint(transform.position);
 			transform.localPosition = Vector3.Lerp(transform.localPosition, des_point , 0.2f);
 			//transform.position = Vector3.Lerp(transform.position, cur_point, 0.1f);
 			//transform.localScale -= new Vector3(0.02f, 0.02f, 0.02f);
-			yield return null;
+			yield return new WaitForSeconds(Time.fixedDeltaTime);
 		}
 
 		if (GameManager.instance.current_item.Contains(item_type))
@@ -101,8 +101,8 @@ public class Item : MonoBehaviour
 		{
 			//Debug.Log("red" + Vector3.Distance(a.transform.localPosition, des_point));
 
-			a.transform.localPosition = Vector3.Lerp(a.transform.localPosition, des_point, 0.1f);
-			yield return null;
+			a.transform.localPosition = Vector3.Lerp(a.transform.localPosition, des_point, 0.2f);
+			yield return new WaitForSeconds(Time.fixedDeltaTime);
 		}
 
 		Destroy(a);
