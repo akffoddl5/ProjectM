@@ -102,6 +102,7 @@ public class LoadSceneManager : MonoBehaviour
 			item_scroll.transform.localScale -= new Vector3(0, 0.02f, 0);
 			yield return null;
 		}
+		item_scroll.SetActive(false);
 		yield break;
 	}
 
