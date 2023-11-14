@@ -40,7 +40,7 @@ public class Mummy_Attack : StateMachineBehaviour
 	
 	override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
-		timer1 -= Time.deltaTime;
+		timer1 -= Time.fixedDeltaTime;
 
 
 		// 플레이어가 있는 경우에만 실행

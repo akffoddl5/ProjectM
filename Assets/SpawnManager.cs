@@ -51,7 +51,7 @@ public class SpawnManager : MonoBehaviour
 			{
 				obj.transform.position += Vector3.up * 3f;
 			}
-			if (idx == 0 || idx == 1 || idx ==2)
+			if (idx == 0)
 			{
 				int item_num = ObjectPool.instance.item_dic.Keys.Count;
 				int rand = Random.Range(0, item_num - 1);

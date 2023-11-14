@@ -12,7 +12,8 @@ public class Player_Dash : PlayerState
 	public override void Enter()
 	{
 		base.Enter();
-		timer1 = 15 * Time.deltaTime;
+		
+		timer1 = 7.5f * Time.fixedDeltaTime;
 		dash_dir = player.transform.forward;
 		//Debug.Log("dash!!!");
 	}
